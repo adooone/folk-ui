@@ -16,7 +16,7 @@ interface DetailSidebarProps {
   onClose: () => void;
 }
 
-function toPascal(id: string): string {
+export function toPascal(id: string): string {
   return id
     .split('-')
     .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
