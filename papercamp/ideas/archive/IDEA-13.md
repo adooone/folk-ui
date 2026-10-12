@@ -2,8 +2,9 @@
 id: IDEA-13
 title: Small checkbox and row textures
 type: feat
-status: review
+status: done
 created: 2026-10-12
+updated: 2026-10-12
 tags:
   - checkbox
   - row
