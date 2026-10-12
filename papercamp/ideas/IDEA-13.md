@@ -59,7 +59,7 @@ step.
 A small size for `Radio` or `Switch`. Chalkboard rows.
 
 ### Phases
-- [ ] Add the small checkbox size
+- [x] Add the small checkbox size
       `size` prop with the 24px wrapper, 14px box, 12px icon and sm label;
       exported types; showcase list.
 - [ ] Give Row texture, fill and shade
