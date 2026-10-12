@@ -129,6 +129,29 @@
   line-height: $line-height-normal;
 }
 
+.small {
+  gap: $space-2;
+
+  .boxWrapper {
+    width: 24px;
+    height: 24px;
+  }
+
+  .box {
+    width: 14px;
+    height: 14px;
+  }
+
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .labelText {
+    font-size: $font-size-sm;
+  }
+}
+
 .chalkboard {
   .labelText {
     color: $color-chalkboard-muted;

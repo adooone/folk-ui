@@ -2,8 +2,9 @@
 id: IDEA-13
 title: Small checkbox and row textures
 type: feat
-status: planned
+status: done
 created: 2026-10-12
+updated: 2026-10-12
 tags:
   - checkbox
   - row
@@ -59,10 +60,12 @@ step.
 A small size for `Radio` or `Switch`. Chalkboard rows.
 
 ### Phases
-- [ ] Add the small checkbox size
+- [x] Add the small checkbox size
       `size` prop with the 24px wrapper, 14px box, 12px icon and sm label;
       exported types; showcase list.
-- [ ] Give Row texture, fill and shade
+      run: 2m46s · 74 in · 8k out · sonnet-5 · sess:11a75abc-730a-4dd9-a72e-b1c6b937c133
+- [x] Give Row texture, fill and shade
       `Card`-shaped props layered over the surface's default paper in
       `resolveRowSurface`, ignored on `none`; unchanged rendering without them;
       exported; showcase kraft header over card rows.
+      run: 3m55s · 64 in · 14.5k out · sonnet-5 · sess:11a75abc-730a-4dd9-a72e-b1c6b937c133

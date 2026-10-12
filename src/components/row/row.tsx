@@ -2,7 +2,12 @@ import type { CSSProperties, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { useRectBlobPaths } from '../../hooks/use-rect-blob-paths';
 import { surface as cardSurfaces } from '../../tokens';
 import { cn } from '../../utils/style-helpers';
-import { getSurfaceStyles } from '../../utils/textures';
+import {
+  type SurfaceConfig,
+  type SurfaceFillKey,
+  type TextureProp,
+  getSurfaceStyles,
+} from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './row.module.scss';
 
@@ -64,13 +69,25 @@ export function rowHideBelowClass(breakpoint?: RowBreakpoint) {
 
 export type RowSurface = 'none' | 'card' | 'nestedCard';
 
-export function resolveRowSurface(surface: RowSurface): {
-  textureConfig: (typeof cardSurfaces)[keyof typeof cardSurfaces] | null;
+export interface RowSurfaceOverrides {
+  /** Replaces the surface's default texture, exactly as `Card`'s `texture` does. */
+  texture?: TextureProp;
+  /** Explicit palette fill for the surface; overrides the texture's own colour, grain stays. */
+  fill?: SurfaceFillKey;
+  /** Replaces the surface's default shade (its darker step). Ignored when `fill` is set. */
+  shade?: boolean;
+}
+
+export function resolveRowSurface(
+  surface: RowSurface,
+  overrides: RowSurfaceOverrides = {},
+): {
+  textureConfig: SurfaceConfig | null;
   textureClass: string | null;
   textureStyle: CSSProperties;
   textureFill: CSSProperties['backgroundColor'];
 } {
-  const textureConfig =
+  const baseConfig: SurfaceConfig | null =
     surface === 'card'
       ? cardSurfaces.card
       : surface === 'nestedCard'
@@ -82,9 +99,25 @@ export function resolveRowSurface(surface: RowSurface): {
       : surface === 'nestedCard'
         ? styles.textureNestedCard
         : null;
-  const { backgroundColor: textureFill, ...textureStyle } = textureConfig
-    ? getSurfaceStyles(textureConfig)
-    : ({} as CSSProperties);
+
+  if (!baseConfig) {
+    return { textureConfig: null, textureClass: null, textureStyle: {}, textureFill: undefined };
+  }
+
+  const { texture, fill, shade } = overrides;
+  const textureConfig: SurfaceConfig =
+    texture === undefined || texture === true
+      ? { ...baseConfig }
+      : texture === false
+        ? { ...baseConfig, texture: undefined }
+        : typeof texture === 'string'
+          ? { ...baseConfig, texture }
+          : { ...baseConfig, ...texture };
+
+  if (fill) textureConfig.fill = fill;
+  if (shade !== undefined) textureConfig.shade = shade;
+
+  const { backgroundColor: textureFill, ...textureStyle } = getSurfaceStyles(textureConfig);
   return { textureConfig, textureClass, textureStyle, textureFill };
 }
 
@@ -107,6 +140,12 @@ export interface RowProps {
   /** Row surface. `none` is a ruled cell (the Divider between rows draws the line),
    *  `card` and `nestedCard` give the row its own paper surface. */
   surface?: RowSurface;
+  /** Replaces the surface's default texture, exactly as `Card`'s `texture` does. Ignored on `surface="none"`. */
+  texture?: TextureProp;
+  /** Explicit palette fill for the surface; overrides the texture's own colour, grain stays. Ignored on `surface="none"`. */
+  fill?: SurfaceFillKey;
+  /** Replaces the surface's default shade (its darker step). Ignored when `fill` is set, or on `surface="none"`. */
+  shade?: boolean;
   /** Make the whole row one hit target. Adds role/tabIndex/keyboard activation. */
   onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   /** Tooltip / a11y label for the row when used as a single hit target. */
@@ -126,6 +165,9 @@ export function Row({
   trailing,
   columns,
   surface = 'none',
+  texture,
+  fill,
+  shade,
   onClick,
   ariaLabel,
   highlighted = false,
@@ -153,7 +195,11 @@ export function Row({
     }
   };
 
-  const { textureConfig, textureClass, textureStyle, textureFill } = resolveRowSurface(surface);
+  const { textureConfig, textureClass, textureStyle, textureFill } = resolveRowSurface(surface, {
+    texture,
+    fill,
+    shade,
+  });
 
   const row = (
     <div
