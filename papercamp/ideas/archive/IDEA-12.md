@@ -2,7 +2,7 @@
 id: IDEA-12
 title: Five rules the parity pass still found
 type: fix
-status: review
+status: done
 created: 2026-10-02
 updated: 2026-10-12
 tags:
