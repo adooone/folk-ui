@@ -959,6 +959,24 @@ const sectionDetails: SectionDetail[] = [
           'Row surface — none is ruled, card and nestedCard give the row its own paper surface',
       },
       {
+        name: 'texture',
+        type: 'TextureProp',
+        description:
+          'Replaces the surface\'s default texture, exactly as Card\'s texture does. Ignored on surface="none"',
+      },
+      {
+        name: 'fill',
+        type: 'SurfaceFillKey',
+        description:
+          'Explicit palette fill for the surface; overrides the texture\'s own colour, grain stays. Ignored on surface="none"',
+      },
+      {
+        name: 'shade',
+        type: 'boolean',
+        description:
+          'Replaces the surface\'s default shade. Ignored when fill is set, or on surface="none"',
+      },
+      {
         name: 'onClick',
         type: '(event: MouseEvent<HTMLDivElement>) => void',
         description:
@@ -2993,6 +3011,23 @@ export const ComponentsPage: FC<{
                 id="#42"
                 title="Watercolor Study"
                 meta={<MetaLine>updated 2 hours ago</MetaLine>}
+                trailing={<Stamp variant="success">Done</Stamp>}
+              />
+            </div>
+            <div className="w-full max-w-md" style={{ marginTop: '1rem' }}>
+              <Row surface="card" texture="kraft" title="Worklist" />
+              <Row
+                surface="card"
+                id="#17"
+                title="Ink Wash Sketch"
+                meta={<MetaLine>updated yesterday</MetaLine>}
+                trailing={<Stamp variant="warning">Review</Stamp>}
+              />
+              <Row
+                surface="card"
+                id="#18"
+                title="Pencil Portrait"
+                meta={<MetaLine>updated 3 days ago</MetaLine>}
                 trailing={<Stamp variant="success">Done</Stamp>}
               />
             </div>
