@@ -67,3 +67,4 @@ A small size for `Radio` or `Switch`. Chalkboard rows.
       `Card`-shaped props layered over the surface's default paper in
       `resolveRowSurface`, ignored on `none`; unchanged rendering without them;
       exported; showcase kraft header over card rows.
+      run: 3m55s · 64 in · 14.5k out · sonnet-5 · sess:11a75abc-730a-4dd9-a72e-b1c6b937c133
