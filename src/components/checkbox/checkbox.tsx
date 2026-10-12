@@ -5,12 +5,14 @@ import { cn } from '../../utils/style-helpers';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './checkbox.module.scss';
 
-export interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface CheckboxProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'size'> {
   label?: string;
   labelPosition?: 'left' | 'right';
   indeterminate?: boolean;
   wobble?: number;
   surface?: 'paper' | 'chalkboard';
+  size?: 'medium' | 'small';
 }
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Checkbox(
@@ -20,6 +22,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
     indeterminate = false,
     wobble = 0.4,
     surface = 'paper',
+    size = 'medium',
     className,
     checked,
     onChange,
@@ -48,6 +51,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(function Che
         styles.wrapper,
         labelPosition === 'left' && styles.labelLeft,
         surface === 'chalkboard' && styles.chalkboard,
+        size === 'small' && styles.small,
         className,
       )}
       htmlFor={id}

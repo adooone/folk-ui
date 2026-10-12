@@ -463,6 +463,12 @@ const sectionDetails: SectionDetail[] = [
         default: "'paper'",
         description: 'Surface style',
       },
+      {
+        name: 'size',
+        type: "'medium' | 'small'",
+        default: "'medium'",
+        description: 'Wrapper, box and label size',
+      },
       disabledProp,
     ],
   },
@@ -2360,6 +2366,11 @@ export const ComponentsPage: FC<{
   const [activeSection, setActiveSection] = useState('button');
   const [checked1, setChecked1] = useState(false);
   const [checked2, setChecked2] = useState(true);
+  const [smallChecked, setSmallChecked] = useState<Record<string, boolean>>({
+    bugs: true,
+    features: false,
+    chores: true,
+  });
   const [buttonWobble, setButtonWobble] = useState(0.5);
   const [inputValue, setInputValue] = useState('');
   const [selectValue, setSelectValue] = useState('');
@@ -3072,6 +3083,21 @@ export const ComponentsPage: FC<{
                 surface={chalkboardTheme ? 'chalkboard' : 'paper'}
                 onChange={() => {}}
               />
+            </div>
+            <div className="space-y-2" style={{ marginTop: '1rem' }}>
+              {Object.entries(smallChecked).map(([key, value]) => (
+                <Checkbox
+                  key={key}
+                  size="small"
+                  label={key}
+                  checked={value}
+                  wobble={buttonWobble}
+                  surface={chalkboardTheme ? 'chalkboard' : 'paper'}
+                  onChange={(e) =>
+                    setSmallChecked((prev) => ({ ...prev, [key]: e.target.checked }))
+                  }
+                />
+              ))}
             </div>
           </ComponentSection>
 
