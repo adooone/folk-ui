@@ -40,7 +40,8 @@
     "ci": {
       "repo": "adooone/paper-ui",
       "branch": "main",
-      "releasePlease": true
+      "releasePlease": true,
+      "draftPr": true
     }
   },
   "defaultAgents": {

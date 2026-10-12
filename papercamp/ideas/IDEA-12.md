@@ -4,6 +4,7 @@ title: Five rules the parity pass still found
 type: fix
 status: review
 created: 2026-10-02
+updated: 2026-10-12
 tags:
   - stamp
   - button
@@ -74,3 +75,4 @@ IDEA-288.
       run: 28s · 14 in · 846 out · sonnet-5 · sess:73cd61f7-c850-4aa1-9d41-de496e64a7c8
 - [x] Give `SettingRow`'s `.label` `min-height: 2rem` with centred content
       run: 36s · 18 in · 1.5k out · sonnet-5 · sess:73cd61f7-c850-4aa1-9d41-de496e64a7c8
+- [x] [manual] Derive draft-PR title and checklist from the idea file
