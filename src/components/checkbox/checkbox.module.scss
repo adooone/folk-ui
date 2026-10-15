@@ -68,6 +68,9 @@
   justify-content: center;
   width: 40px;
   height: 40px;
+  // The hover blob paints 40px but the row only takes the box's height, so a list of
+  // checkboxes sits as tight as its labels instead of 40px apart.
+  margin-block: -8px;
 }
 
 .blobBg {
@@ -133,18 +136,19 @@
   gap: $space-2;
 
   .boxWrapper {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    margin-block: -5px;
   }
 
   .box {
-    width: 14px;
-    height: 14px;
+    width: 18px;
+    height: 18px;
   }
 
   .icon {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 15px;
   }
 
   .labelText {
