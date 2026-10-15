@@ -1,10 +1,10 @@
-# Paper UI — Plans Overview
+# Folk UI — Plans Overview
 
 ## Active Plans
 
 | Plan | Status | Description |
 |------|--------|-------------|
-| [005-PAPER_UI_PLAN.md](./005-PAPER_UI_PLAN.md) | 🚧 In Progress | Create Paper UI component library (MVP: 6 components + showcase) |
+| [005-PAPER_UI_PLAN.md](./005-PAPER_UI_PLAN.md) | 🚧 In Progress | Create Folk UI component library (MVP: 6 components + showcase) |
 | [010-DESIGN_SYSTEM_PHASE2.md](./010-DESIGN_SYSTEM_PHASE2.md) | 🚧 In Progress | Design system phase 2: token/state consistency, texture quality pass, component gap-filling |
 | [013-DESIGN_AUDIT.md](./013-DESIGN_AUDIT.md) | 🚧 In Progress | Full design/code audit: findings, fix batches (5 landed), open items, tooling candidates |
 | [014-SURFACE_SYSTEM.md](./014-SURFACE_SYSTEM.md) | 🚧 In Progress | Decouple surface fill from texture: shared getSurfaceStyles helper, per-texture shade, soft accent washes (Card first) |
@@ -38,7 +38,7 @@ _(Completed plans will appear here)_
 
 ## Project Vision
 
-**Paper UI** is a React component library built around natural materials: textured paper, ink, canvas, wood grain, and watercolor washes. It is a standalone NPM package (`@dendelion/paper-ui`) that serves as the visual foundation for Paper Camp and any other project needing an organic, tactile UI.
+**Folk UI** is a React component library built around natural materials: textured paper, ink, canvas, wood grain, and watercolor washes. It is a standalone NPM package (`@dendelion/folk-ui`) that serves as the visual foundation for Paper Camp and any other project needing an organic, tactile UI.
 
 ### Core Concept
 
@@ -50,13 +50,13 @@ _(Completed plans will appear here)_
 ### Architecture
 
 ```
-paper-ui/
+folk-ui/
 ├── src/
 │   ├── components/     # React components with SCSS modules
 │   ├── styles/         # Design tokens, mixins, textures
 │   ├── utils/          # Style helpers (cn, variant maps)
 │   └── showcase/       # Built-in documentation app
-├── tailwind.ts         # Paper UI Tailwind preset
+├── tailwind.ts         # Folk UI Tailwind preset
 └── paperplan/         # This planning system
 ```
 
@@ -89,5 +89,5 @@ This project follows the Paper Plan methodology. See [about.md](./about.md) for 
 
 | Project | Relationship |
 |---------|-------------|
-| [Paper Camp](../../paper-camp/paperplan/plans.md) | Primary consumer of Paper UI |
+| [Paper Camp](../../paper-camp/paperplan/plans.md) | Primary consumer of Folk UI |
 | [Mojo UI](../../mojo-ui/paperplan/plans.md) | Predecessor / reference implementation |

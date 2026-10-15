@@ -1,4 +1,4 @@
-# design-sync notes for paper-ui
+# design-sync notes for folk-ui
 
 ## Environment
 

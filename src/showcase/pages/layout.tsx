@@ -57,7 +57,7 @@ const pageContent = (
         margin: 0,
       }}
     >
-      Paper UI is a library of reusable React components for building natural materials interfaces.
+      Folk UI is a library of reusable React components for building natural materials interfaces.
       It is made with accessibility and performance in mind. Colors and textures are carefully
       chosen to create a harmonious and intuitive user experience.
     </p>

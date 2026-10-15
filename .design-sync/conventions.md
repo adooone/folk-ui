@@ -1,6 +1,6 @@
 ## Conventions
 
-**No provider or theme wrapper required.** Paper UI has no `ThemeProvider` or context — every component is self-contained. Theming is per-component via the `surface` prop (`'paper' | 'chalkboard'`, default `'paper'`), not a global mode. Mix surfaces freely within one composition (e.g. a chalkboard `Card` on an otherwise paper page) if that's the intent.
+**No provider or theme wrapper required.** Folk UI has no `ThemeProvider` or context — every component is self-contained. Theming is per-component via the `surface` prop (`'paper' | 'chalkboard'`, default `'paper'`), not a global mode. Mix surfaces freely within one composition (e.g. a chalkboard `Card` on an otherwise paper page) if that's the intent.
 
 **Styling idiom: component props, not utility classes.** Consumers style through a small, consistent prop vocabulary rather than className strings:
 
@@ -19,7 +19,7 @@
 **Build example** (real composition, verified against the shipped `.d.ts`):
 
 ```tsx
-import { Card, Button, Stamp } from '@dendelion/paper-ui';
+import { Card, Button, Stamp } from '@dendelion/folk-ui';
 
 <Card variant="elevated" surface="paper">
   <Stamp variant="success" dot wobble={0}>Active</Stamp>
@@ -27,4 +27,4 @@ import { Card, Button, Stamp } from '@dendelion/paper-ui';
 </Card>
 ```
 
-**Optional companion preset.** `@dendelion/paper-ui/tailwind` exports a Tailwind preset with the raw design tokens (`paper-*`, `ink-*`, `canvas-*`, `watercolor-*` color scales, plus texture-class utilities like `bg-paper-texture`/`bg-kraft-texture`) for layout glue around the components — optional, and not how the components themselves are styled.
+**Optional companion preset.** `@dendelion/folk-ui/tailwind` exports a Tailwind preset with the raw design tokens (`paper-*`, `ink-*`, `canvas-*`, `watercolor-*` color scales, plus texture-class utilities like `bg-paper-texture`/`bg-kraft-texture`) for layout glue around the components — optional, and not how the components themselves are styled.

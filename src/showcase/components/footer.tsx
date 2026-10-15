@@ -10,7 +10,7 @@ export const Footer: FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-base" style={{ color: colorInkTertiary, fontFamily: fontFamilySerif }}>
-          Paper UI — Natural Materials Component Library
+          Folk UI — Natural Materials Component Library
         </p>
         <p className="text-base" style={{ color: colorInkTertiary, fontFamily: fontFamilySerif }}>
           v{packageJson.version}

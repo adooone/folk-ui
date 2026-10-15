@@ -29,7 +29,7 @@ function generateCode(
   selectedValues: Record<string, string | boolean>,
 ): string {
   const lines: string[] = [];
-  const imports = `import { ${componentName} } from '@dendelion/paper-ui';`;
+  const imports = `import { ${componentName} } from '@dendelion/folk-ui';`;
 
   const propLines: string[] = [];
   for (const prop of props) {

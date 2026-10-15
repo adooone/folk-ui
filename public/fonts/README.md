@@ -1,6 +1,6 @@
 # Custom Fonts
 
-Drop your font files here to use them in Paper UI.
+Drop your font files here to use them in Folk UI.
 
 ## Supported Formats
 

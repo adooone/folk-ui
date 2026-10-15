@@ -116,7 +116,7 @@ export function Layout({
   const sidebarContent = hasSidebar && (
     <div className={styles.sidebarInner}>
       <div className={styles.logoArea}>
-        {logo || <span className={styles.logoText}>Paper UI</span>}
+        {logo || <span className={styles.logoText}>Folk UI</span>}
       </div>
 
       <nav className={styles.nav} aria-label="Main navigation">
@@ -255,7 +255,7 @@ export function Layout({
       {showFooter && (
         <footer className={styles.footer}>
           {footerContent || (
-            <p className={styles.footerText}>Paper UI — Natural Materials Component Library</p>
+            <p className={styles.footerText}>Folk UI — Natural Materials Component Library</p>
           )}
         </footer>
       )}

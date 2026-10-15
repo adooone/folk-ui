@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "projectName": "paper-ui",
+  "projectName": "folk-ui",
   "initializedAt": "2026-09-10T07:52:57.157Z",
   "nextId": {
     "idea": 14
@@ -38,7 +38,7 @@
       }
     ],
     "ci": {
-      "repo": "adooone/paper-ui",
+      "repo": "adooone/folk-ui",
       "branch": "main",
       "releasePlease": true,
       "draftPr": true

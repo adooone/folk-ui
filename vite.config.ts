@@ -36,7 +36,7 @@ export default defineConfig(({ command }) => {
           index: resolve(__dirname, 'src/index.ts'),
           tokens: resolve(__dirname, 'src/tokens.ts'),
         },
-        name: 'PaperUI',
+        name: 'FolkUI',
         fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'mjs' : 'cjs'}`,
         formats: ['es', 'cjs'],
       },
