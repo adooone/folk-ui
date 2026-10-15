@@ -1,5 +1,5 @@
 {
-  "name": "@dendelion/paper-ui",
+  "name": "@dendelion/folk-ui",
   "version": "0.23.3",
   "description": "Natural-material React component library — paper, ink, canvas, and watercolor",
   "type": "module",
@@ -63,12 +63,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adooone/paper-ui.git"
+    "url": "git+https://github.com/adooone/folk-ui.git"
   },
   "bugs": {
-    "url": "https://github.com/adooone/paper-ui/issues"
+    "url": "https://github.com/adooone/folk-ui/issues"
   },
-  "homepage": "https://github.com/adooone/paper-ui#readme",
+  "homepage": "https://github.com/adooone/folk-ui#readme",
   "keywords": [
     "react",
     "components",

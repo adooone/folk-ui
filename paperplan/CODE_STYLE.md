@@ -1,4 +1,4 @@
-# Paper UI — Code Style Guide
+# Folk UI — Code Style Guide
 
 > This guide is for AI agents and contributors. Review it before every code change.
 

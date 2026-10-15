@@ -20,10 +20,10 @@ import {
 } from '../lib/styles';
 
 const quickStartCode = `// 1. Install the package
-pnpm add @dendelion/paper-ui
+pnpm add @dendelion/folk-ui
 
 // 2. Import the Tailwind preset
-import { paperPreset } from '@dendelion/paper-ui/tailwind';
+import { paperPreset } from '@dendelion/folk-ui/tailwind';
 
 // 3. Update tailwind.config.js
 export default {
@@ -32,9 +32,9 @@ export default {
 };
 
 // 4. Import global styles in your app entry
-import '@dendelion/paper-ui';`;
+import '@dendelion/folk-ui';`;
 
-const usageExample = `import { Button, Page, Layout } from '@dendelion/paper-ui';
+const usageExample = `import { Button, Page, Layout } from '@dendelion/folk-ui';
 
 function App() {
   return (
@@ -248,7 +248,7 @@ export const DocsPage: FC = () => {
             fontSize: '1.35rem',
           }}
         >
-          Complete API reference for all Paper UI components including props, usage examples, and
+          Complete API reference for all Folk UI components including props, usage examples, and
           installation instructions.
         </p>
       </div>
@@ -273,7 +273,7 @@ export const DocsPage: FC = () => {
               fontSize: '1.35rem',
             }}
           >
-            Get started with Paper UI in your React project.
+            Get started with Folk UI in your React project.
           </p>
           <CodeBlock filename="setup.sh" code={quickStartCode} />
         </section>
@@ -496,7 +496,7 @@ export const DocsPage: FC = () => {
               fontSize: '1.35rem',
             }}
           >
-            Paper UI is built with TypeScript and exports all type definitions.
+            Folk UI is built with TypeScript and exports all type definitions.
           </p>
 
           <CodeBlock
@@ -508,7 +508,7 @@ export const DocsPage: FC = () => {
   PageProps,
   LayoutProps,
   NavigationItem
-} from '@dendelion/paper-ui';
+} from '@dendelion/folk-ui';
 
 // Use types in your components
 interface MyComponentProps {

@@ -16,9 +16,9 @@ import {
 } from '../lib/styles';
 import type { TextureConfig } from '../lib/textures';
 
-const installCode = `pnpm add @dendelion/paper-ui
+const installCode = `pnpm add @dendelion/folk-ui
 
-yarn add @dendelion/paper-ui`;
+yarn add @dendelion/folk-ui`;
 
 interface WelcomePageProps {
   onNavigate: (page: 'gallery' | 'layout' | 'tokens' | 'docs') => void;
@@ -70,7 +70,7 @@ export const WelcomePage: FC<WelcomePageProps> = ({ onNavigate }) => {
                   fontWeight: 700,
                 }}
               >
-                Paper UI
+                Folk UI
               </h1>
 
               <p

@@ -125,7 +125,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'text',
     title: 'Text',
-    codeExample: `import { Text } from '@dendelion/paper-ui';
+    codeExample: `import { Text } from '@dendelion/folk-ui';
 
 <Text face="display" size="lg" weight="semibold">Display heading</Text>
 <Text face="handwritten" size="sm" tone="secondary">A handwritten note</Text>`,
@@ -177,7 +177,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'facts-grid',
     title: 'FactsGrid',
-    codeExample: `import { FactsGrid } from '@dendelion/paper-ui';
+    codeExample: `import { FactsGrid } from '@dendelion/folk-ui';
 
 <FactsGrid
   layout="inline"
@@ -213,7 +213,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'button',
     title: 'Button',
-    codeExample: `import { Button } from '@dendelion/paper-ui';
+    codeExample: `import { Button } from '@dendelion/folk-ui';
 
 <Button variant="primary" size="medium" onClick={handleClick}>
   Primary
@@ -262,7 +262,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'icon-button',
     title: 'IconButton',
-    codeExample: `import { IconButton } from '@dendelion/paper-ui';
+    codeExample: `import { IconButton } from '@dendelion/folk-ui';
 
 <IconButton icon={<HeartIcon />} label="Like" variant="default" />
 <IconButton icon={<HeartIcon />} label="Like" variant="ghost" />
@@ -304,7 +304,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'stamp',
     title: 'Stamp',
-    codeExample: `import { Stamp } from '@dendelion/paper-ui';
+    codeExample: `import { Stamp } from '@dendelion/folk-ui';
 
 <Stamp fillColor="rgba(143, 185, 150, 0.25)" textColor="#3D5A42">
   Done
@@ -413,7 +413,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'checkbox',
     title: 'Checkbox',
-    codeExample: `import { Checkbox } from '@dendelion/paper-ui';
+    codeExample: `import { Checkbox } from '@dendelion/folk-ui';
 
 <Checkbox
   label="Enable notifications"
@@ -475,7 +475,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'input',
     title: 'Input',
-    codeExample: `import { Input } from '@dendelion/paper-ui';
+    codeExample: `import { Input } from '@dendelion/folk-ui';
 
 <Input
   label="Project name"
@@ -524,7 +524,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'select',
     title: 'Select',
-    codeExample: `import { Select } from '@dendelion/paper-ui';
+    codeExample: `import { Select } from '@dendelion/folk-ui';
 
 <Select
   label="Texture"
@@ -607,7 +607,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'layout',
     title: 'Layout',
-    codeExample: `import { Layout, Page } from '@dendelion/paper-ui';
+    codeExample: `import { Layout, Page } from '@dendelion/folk-ui';
 
 <Layout
   title="Paper Camp"
@@ -722,7 +722,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'page',
     title: 'Page',
-    codeExample: `import { Page } from '@dendelion/paper-ui';
+    codeExample: `import { Page } from '@dendelion/folk-ui';
 
 <Page withAccent accentColor="green">
   <h2>Journal Entry</h2>
@@ -752,7 +752,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'card',
     title: 'Card',
-    codeExample: `import { Card } from '@dendelion/paper-ui';
+    codeExample: `import { Card } from '@dendelion/folk-ui';
 
 <Card texture="kraft" shade>
   <h3>Project Notes</h3>
@@ -827,7 +827,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'table',
     title: 'Table',
-    codeExample: `import { Table } from '@dendelion/paper-ui';
+    codeExample: `import { Table } from '@dendelion/folk-ui';
 
 <Table
   variant="grid"
@@ -898,7 +898,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'row',
     title: 'Row',
-    codeExample: `import { Row, MetaLine, Stamp } from '@dendelion/paper-ui';
+    codeExample: `import { Row, MetaLine, Stamp } from '@dendelion/folk-ui';
 
 <Row
   id="#42"
@@ -1005,7 +1005,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'row-skeleton',
     title: 'RowSkeleton',
-    codeExample: `import { RowSkeleton } from '@dendelion/paper-ui';
+    codeExample: `import { RowSkeleton } from '@dendelion/folk-ui';
 
 <RowSkeleton />
 <RowSkeleton surface="card" slots={['title', 'trailing']} />`,
@@ -1049,7 +1049,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'sidebar-card',
     title: 'SidebarCard',
-    codeExample: `import { SidebarCard, SidebarItem } from '@dendelion/paper-ui';
+    codeExample: `import { SidebarCard, SidebarItem } from '@dendelion/folk-ui';
 
 <SidebarCard>
   <SidebarItem icon={<FolderIcon />}>Plans</SidebarItem>
@@ -1067,7 +1067,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'sidebar-label',
     title: 'SidebarLabel',
-    codeExample: `import { SidebarLabel } from '@dendelion/paper-ui';
+    codeExample: `import { SidebarLabel } from '@dendelion/folk-ui';
 
 <SidebarLabel>Status</SidebarLabel>
 <SidebarLabel as="h3">Recent</SidebarLabel>`,
@@ -1088,7 +1088,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'sidebar-field',
     title: 'SidebarField',
-    codeExample: `import { SidebarField, Input } from '@dendelion/paper-ui';
+    codeExample: `import { SidebarField, Input } from '@dendelion/folk-ui';
 
 <SidebarField label="Search">
   <Input placeholder="Find a plan..." />
@@ -1111,7 +1111,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'sidebar-item',
     title: 'SidebarItem',
-    codeExample: `import { SidebarItem } from '@dendelion/paper-ui';
+    codeExample: `import { SidebarItem } from '@dendelion/folk-ui';
 
 <SidebarItem icon={<FolderIcon />}>Plans</SidebarItem>
 <SidebarItem icon={<BellIcon />} count={3} onClick={() => go('notifications')}>
@@ -1188,7 +1188,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'setting-row',
     title: 'SettingRow',
-    codeExample: `import { SettingRow, Input, Switch } from '@dendelion/paper-ui';
+    codeExample: `import { SettingRow, Input, Switch } from '@dendelion/folk-ui';
 
 <SettingRow
   label="Display name"
@@ -1230,7 +1230,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'setting-group',
     title: 'SettingGroup',
-    codeExample: `import { SettingGroup, SettingRow, Switch } from '@dendelion/paper-ui';
+    codeExample: `import { SettingGroup, SettingRow, Switch } from '@dendelion/folk-ui';
 
 <SettingGroup title="Privacy" description="Control what others see.">
   <SettingRow label="Public profile" control={<Switch defaultChecked />} />
@@ -1270,7 +1270,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'island',
     title: 'Island',
-    codeExample: `import { Island } from '@dendelion/paper-ui';
+    codeExample: `import { Island } from '@dendelion/folk-ui';
 
 <Island surface="paper">
   <span>Controls go here</span>
@@ -1293,7 +1293,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'tabs',
     title: 'Tabs',
-    codeExample: `import { Tabs } from '@dendelion/paper-ui';
+    codeExample: `import { Tabs } from '@dendelion/folk-ui';
 
 <Tabs
   items={[
@@ -1331,7 +1331,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'alert',
     title: 'Alert',
-    codeExample: `import { Alert } from '@dendelion/paper-ui';
+    codeExample: `import { Alert } from '@dendelion/folk-ui';
 
 <Alert variant="success">Your changes have been saved.</Alert>
 <Alert variant="error" dismissible onDismiss={handleDismiss}>
@@ -1378,7 +1378,7 @@ const sectionDetails: SectionDetail[] = [
   {
     id: 'toast',
     title: 'Toast',
-    codeExample: `import { ToastProvider, useToast } from '@dendelion/paper-ui';
+    codeExample: `import { ToastProvider, useToast } from '@dendelion/folk-ui';
 
 function SaveButton() {
   const { toast } = useToast();
@@ -1426,7 +1426,7 @@ function SaveButton() {
   {
     id: 'list-item',
     title: 'ListItem',
-    codeExample: `import { ListItem } from '@dendelion/paper-ui';
+    codeExample: `import { ListItem } from '@dendelion/folk-ui';
 
 <ListItem onClick={handleClick} icon={<Icon />}>
   Dashboard
@@ -1494,7 +1494,7 @@ function SaveButton() {
   {
     id: 'textarea',
     title: 'Textarea',
-    codeExample: `import { Textarea } from '@dendelion/paper-ui';
+    codeExample: `import { Textarea } from '@dendelion/folk-ui';
 
 <Textarea
   label="Notes"
@@ -1537,7 +1537,7 @@ function SaveButton() {
   {
     id: 'progress',
     title: 'Progress',
-    codeExample: `import { Progress } from '@dendelion/paper-ui';
+    codeExample: `import { Progress } from '@dendelion/folk-ui';
 
 <Progress value={65} />
 <Progress value={42} color="#D4A373" height={8} />
@@ -1583,7 +1583,7 @@ function SaveButton() {
   {
     id: 'modal',
     title: 'Modal',
-    codeExample: `import { Modal } from '@dendelion/paper-ui';
+    codeExample: `import { Modal } from '@dendelion/folk-ui';
 
 <Modal
   open={isOpen}
@@ -1640,7 +1640,7 @@ function SaveButton() {
   {
     id: 'radio',
     title: 'Radio',
-    codeExample: `import { RadioGroup } from '@dendelion/paper-ui';
+    codeExample: `import { RadioGroup } from '@dendelion/folk-ui';
 
 <RadioGroup
   value={value}
@@ -1685,7 +1685,7 @@ function SaveButton() {
   {
     id: 'switch',
     title: 'Switch',
-    codeExample: `import { Switch } from '@dendelion/paper-ui';
+    codeExample: `import { Switch } from '@dendelion/folk-ui';
 
 <Switch label="Notifications" checked={on} onChange={(e) => setOn(e.target.checked)} />`,
     props: [
@@ -1717,7 +1717,7 @@ function SaveButton() {
   {
     id: 'spinner',
     title: 'Spinner',
-    codeExample: `import { Spinner } from '@dendelion/paper-ui';
+    codeExample: `import { Spinner } from '@dendelion/folk-ui';
 
 <Spinner size="medium" />`,
     props: [
@@ -1744,7 +1744,7 @@ function SaveButton() {
   {
     id: 'skeleton',
     title: 'Skeleton',
-    codeExample: `import { Skeleton } from '@dendelion/paper-ui';
+    codeExample: `import { Skeleton } from '@dendelion/folk-ui';
 
 <Skeleton variant="text" />
 <Skeleton variant="circle" width={48} height={48} />
@@ -1777,7 +1777,7 @@ function SaveButton() {
   {
     id: 'arc-gauge',
     title: 'ArcGauge',
-    codeExample: `import { ArcGauge } from '@dendelion/paper-ui';
+    codeExample: `import { ArcGauge } from '@dendelion/folk-ui';
 
 <ArcGauge value={72} max={100} label="Capacity" />
 <ArcGauge value={18} max={100} label="Errors" fillColor="#C98B8B" floor={0.2} />`,
@@ -1822,7 +1822,7 @@ function SaveButton() {
   {
     id: 'bar-chart',
     title: 'BarChart',
-    codeExample: `import { BarChart } from '@dendelion/paper-ui';
+    codeExample: `import { BarChart } from '@dendelion/folk-ui';
 
 <BarChart
   bars={[
@@ -1865,7 +1865,7 @@ function SaveButton() {
   {
     id: 'stacked-bar',
     title: 'StackedBar',
-    codeExample: `import { StackedBar } from '@dendelion/paper-ui';
+    codeExample: `import { StackedBar } from '@dendelion/folk-ui';
 
 <StackedBar
   segments={[
@@ -1898,7 +1898,7 @@ function SaveButton() {
   {
     id: 'commit-rail',
     title: 'CommitRail',
-    codeExample: `import { CommitRail } from '@dendelion/paper-ui';
+    codeExample: `import { CommitRail } from '@dendelion/folk-ui';
 
 <div className="flex h-12">
   <CommitRail pushed isFirst={false} isLast={false} />
@@ -1928,7 +1928,7 @@ function SaveButton() {
   {
     id: 'avatar',
     title: 'Avatar',
-    codeExample: `import { Avatar } from '@dendelion/paper-ui';
+    codeExample: `import { Avatar } from '@dendelion/folk-ui';
 
 <Avatar name="Ada Lovelace" />
 <Avatar src="/photo.jpg" alt="Ada Lovelace" />
@@ -1972,7 +1972,7 @@ function SaveButton() {
   {
     id: 'divider',
     title: 'Divider',
-    codeExample: `import { Divider } from '@dendelion/paper-ui';
+    codeExample: `import { Divider } from '@dendelion/folk-ui';
 
 <Divider />
 <Divider label="or" />
@@ -2007,7 +2007,7 @@ function SaveButton() {
   {
     id: 'accordion',
     title: 'Accordion',
-    codeExample: `import { Accordion } from '@dendelion/paper-ui';
+    codeExample: `import { Accordion } from '@dendelion/folk-ui';
 
 <Accordion title="Shipping details" expanded={isOpen} onToggle={() => setIsOpen(!isOpen)}>
   <p>Ships within 2-3 business days.</p>
@@ -2047,7 +2047,7 @@ function SaveButton() {
   {
     id: 'tooltip',
     title: 'Tooltip',
-    codeExample: `import { Tooltip } from '@dendelion/paper-ui';
+    codeExample: `import { Tooltip } from '@dendelion/folk-ui';
 
 <Tooltip content="Saves your changes">
   <Button>Save</Button>
@@ -2094,7 +2094,7 @@ function SaveButton() {
   {
     id: 'breadcrumb',
     title: 'Breadcrumb',
-    codeExample: `import { Breadcrumb } from '@dendelion/paper-ui';
+    codeExample: `import { Breadcrumb } from '@dendelion/folk-ui';
 
 <Breadcrumb
   items={[
@@ -2122,7 +2122,7 @@ function SaveButton() {
   {
     id: 'pagination',
     title: 'Pagination',
-    codeExample: `import { Pagination } from '@dendelion/paper-ui';
+    codeExample: `import { Pagination } from '@dendelion/folk-ui';
 
 <Pagination page={page} totalPages={12} onPageChange={setPage} />`,
     props: [
@@ -2161,7 +2161,7 @@ function SaveButton() {
   {
     id: 'menu',
     title: 'Menu',
-    codeExample: `import { Menu } from '@dendelion/paper-ui';
+    codeExample: `import { Menu } from '@dendelion/folk-ui';
 
 <Menu
   trigger={<IconButton icon={<MoreIcon />} label="More options" variant="ghost" />}
@@ -2228,7 +2228,7 @@ function SaveButton() {
   PlusIcon,
   FolderIcon,
   ChevronRightIcon,
-} from '@dendelion/paper-ui';
+} from '@dendelion/folk-ui';
 
 <IconButton icon={<WandIcon />} label="Magic" />
 <Stamp icon={<RefreshIcon />}>Syncing</Stamp>
@@ -2246,7 +2246,7 @@ function SaveButton() {
   {
     id: 'disclosure',
     title: 'Disclosure',
-    codeExample: `import { Disclosure } from '@dendelion/paper-ui';
+    codeExample: `import { Disclosure } from '@dendelion/folk-ui';
 
 const [open, setOpen] = useState(false);
 <Disclosure
@@ -2302,7 +2302,7 @@ const [open, setOpen] = useState(false);
   {
     id: 'drawer',
     title: 'Drawer',
-    codeExample: `import { Drawer } from '@dendelion/paper-ui';
+    codeExample: `import { Drawer } from '@dendelion/folk-ui';
 
 <Drawer open={isOpen} onClose={() => setIsOpen(false)} side="left" width={280}>
   <p>Panel content</p>
@@ -2343,7 +2343,7 @@ const [open, setOpen] = useState(false);
   {
     id: 'overflow-toolbar',
     title: 'OverflowToolbar',
-    codeExample: `import { OverflowToolbar } from '@dendelion/paper-ui';
+    codeExample: `import { OverflowToolbar } from '@dendelion/folk-ui';
 
 <OverflowToolbar
   items={[

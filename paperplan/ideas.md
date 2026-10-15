@@ -1,4 +1,4 @@
-# Paper UI — Ideas & Future Concepts
+# Folk UI — Ideas & Future Concepts
 
 A scratchpad for visual concepts, interaction experiments, and planned enhancements.
 

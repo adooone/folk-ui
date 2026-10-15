@@ -1,5 +1,5 @@
 /**
- * Paper UI Shared Styles
+ * Folk UI Shared Styles
  *
  * Reusable Tailwind class arrays for consistent paper-themed styling
  * across applications.

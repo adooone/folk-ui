@@ -1,4 +1,4 @@
-# Agent Instructions — Paper UI
+# Agent Instructions — Folk UI
 
 ## Quick Reference
 

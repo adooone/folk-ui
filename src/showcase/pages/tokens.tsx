@@ -224,7 +224,7 @@ export const TokensPage: FC = () => {
             fontSize: '1.35rem',
           }}
         >
-          Complete reference for Paper UI's design system tokens including colors, typography,
+          Complete reference for Folk UI's design system tokens including colors, typography,
           spacing, and more.
         </p>
       </div>

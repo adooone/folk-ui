@@ -1,12 +1,12 @@
-# @dendelion/paper-ui
+# @dendelion/folk-ui
 
 <p align="center">
   <strong>Natural-material React component library — paper, ink, canvas, and watercolor.</strong>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@dendelion/paper-ui">
-    <img src="https://img.shields.io/npm/v/@dendelion/paper-ui.svg?style=flat-square&color=%23D4A373" alt="npm version" />
+  <a href="https://www.npmjs.com/package/@dendelion/folk-ui">
+    <img src="https://img.shields.io/npm/v/@dendelion/folk-ui.svg?style=flat-square&color=%23D4A373" alt="npm version" />
   </a>
   <img src="https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=flat-square&logo=typescript&logoColor=white&color=%23D4A373" alt="TypeScript" />
   <img src="https://img.shields.io/badge/React-%2320232a.svg?style=flat-square&logo=react&logoColor=%2361DAFB&color=%23D4A373" alt="React" />
@@ -27,9 +27,9 @@
 ## Installation
 
 ```bash
-npm install @dendelion/paper-ui
+npm install @dendelion/folk-ui
 # or
-pnpm add @dendelion/paper-ui
+pnpm add @dendelion/folk-ui
 ```
 
 ### Peer Dependencies
@@ -44,7 +44,7 @@ npm install react react-dom tailwindcss
 
 ```ts
 // tailwind.config.ts
-import { paperPreset } from '@dendelion/paper-ui/tailwind';
+import { paperPreset } from '@dendelion/folk-ui/tailwind';
 
 export default {
   presets: [paperPreset],
@@ -56,7 +56,7 @@ export default {
 
 ```ts
 // In your app entry (e.g., main.tsx)
-import '@dendelion/paper-ui/dist/index.css';
+import '@dendelion/folk-ui/dist/index.css';
 ```
 
 This imports the bundled CSS including fonts, base styles, and Tailwind directives.
@@ -64,7 +64,7 @@ This imports the bundled CSS including fonts, base styles, and Tailwind directiv
 ### 3. Use Components
 
 ```tsx
-import { Layout, Page, Button, Checkbox, IconButton } from '@dendelion/paper-ui';
+import { Layout, Page, Button, Checkbox, IconButton } from '@dendelion/folk-ui';
 
 function App() {
   return (
@@ -229,14 +229,14 @@ Available as Tailwind utilities:
 
 ## Native / Dependency-Free Consumer
 
-Paper UI ships three things a non-web client (such as the Paper Camp phone
+Folk UI ships three things a non-web client (such as the Paper Camp phone
 app) can consume without pulling React, framer-motion, or roughjs:
 
 | Path | Contents |
 |------|----------|
-| `@dendelion/paper-ui/tokens` | The full token objects (`colors`, `paper`, `ink`, `canvas`, `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `radii`, `shadows`, `space`) and the `withAlpha` helper — as `as const` objects with no imports. |
-| `@dendelion/paper-ui/dist/fonts/` | The self-hosted display font (`Luminari-Regular.woff`). |
-| `@dendelion/paper-ui/dist/img/` | Image assets bundled with the package (e.g. `logo.svg`). |
+| `@dendelion/folk-ui/tokens` | The full token objects (`colors`, `paper`, `ink`, `canvas`, `fontFamily`, `fontSize`, `fontWeight`, `lineHeight`, `letterSpacing`, `radii`, `shadows`, `space`) and the `withAlpha` helper — as `as const` objects with no imports. |
+| `@dendelion/folk-ui/dist/fonts/` | The self-hosted display font (`Luminari-Regular.woff`). |
+| `@dendelion/folk-ui/dist/img/` | Image assets bundled with the package (e.g. `logo.svg`). |
 
 ```ts
 // From React Native, an Electron renderer, or any non-React host:
@@ -249,7 +249,7 @@ import {
   space,
   radii,
   withAlpha,
-} from '@dendelion/paper-ui/tokens';
+} from '@dendelion/folk-ui/tokens';
 ```
 
 The `./tokens` entry has no React dependency, so it works in any JS

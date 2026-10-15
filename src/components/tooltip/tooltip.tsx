@@ -84,7 +84,7 @@ export function Tooltip({
   // real dimensions.
   const [size, setSize] = useState<TooltipSize | null>(null);
   // A wrapper element holds the position ref rather than the child itself,
-  // since paper-ui's components are plain function components (no
+  // since folk-ui's components are plain function components (no
   // forwardRef), so a ref passed via cloneElement would silently fail.
   const wrapperRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLSpanElement | null>(null);
