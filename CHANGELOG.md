@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.24.0](https://github.com/adooone/folk-ui/compare/v0.23.3...v0.24.0) (2026-10-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **package:** Rename package to @dendelion/folk-ui ([#48](https://github.com/adooone/folk-ui/issues/48))
+
+### Features
+
+* **package:** Rename package to @dendelion/folk-ui ([#48](https://github.com/adooone/folk-ui/issues/48)) ([d391cbb](https://github.com/adooone/folk-ui/commit/d391cbb941494e61e10cbf3434321694878a4b06))
+
 ## [0.23.3](https://github.com/adooone/paper-ui/compare/v0.23.2...v0.23.3) (2026-10-12)
 
 
