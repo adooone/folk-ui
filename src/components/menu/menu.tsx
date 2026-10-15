@@ -1,4 +1,4 @@
-import { cloneElement, useCallback, useEffect, useId, useRef, useState } from 'react';
+import { cloneElement, useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import type {
   MouseEvent,
   ReactElement,
@@ -37,6 +37,14 @@ export interface MenuProps {
 
 const GAP = 6;
 
+/** Below the trigger, unless that runs off the viewport's bottom and the space above fits. */
+function menuTop(rect: DOMRect, height: number | null): number {
+  const below = rect.bottom + GAP;
+  if (height === null || typeof window === 'undefined') return below;
+  const above = rect.top - GAP - height;
+  return below + height > window.innerHeight && above >= 0 ? above : below;
+}
+
 function isSeparator(entry: MenuEntry): entry is MenuSeparator {
   return 'type' in entry && entry.type === 'separator';
 }
@@ -45,6 +53,7 @@ export function Menu({ trigger, items, align = 'start', surface = 'paper', class
   const menuId = useId();
   const [isOpen, setIsOpen] = useState(false);
   const [rect, setRect] = useState<DOMRect | null>(null);
+  const [menuHeight, setMenuHeight] = useState<number | null>(null);
   const wrapperRef = useRef<HTMLSpanElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -88,6 +97,15 @@ export function Menu({ trigger, items, align = 'start', surface = 'paper', class
       window.removeEventListener('resize', updateRect);
     };
   }, [isOpen]);
+
+  // Measured once the portal renders, so a menu near the viewport's bottom can open upward.
+  useLayoutEffect(() => {
+    if (!isOpen || !rect) {
+      setMenuHeight(null);
+      return;
+    }
+    if (listRef.current) setMenuHeight(listRef.current.offsetHeight);
+  }, [isOpen, rect]);
 
   // Move focus into the menu once it's positioned and rendered
   useEffect(() => {
@@ -156,7 +174,8 @@ export function Menu({ trigger, items, align = 'start', surface = 'paper', class
             className={cn(styles.menu, surface === 'chalkboard' && styles.chalkboard, className)}
             style={{
               position: 'fixed',
-              top: rect.bottom + GAP,
+              top: menuTop(rect, menuHeight),
+              visibility: menuHeight === null ? 'hidden' : undefined,
               minWidth: rect.width,
               ...(align === 'end'
                 ? { right: window.innerWidth - rect.right }
