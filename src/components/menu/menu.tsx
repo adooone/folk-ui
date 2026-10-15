@@ -1,4 +1,12 @@
-import { cloneElement, useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import {
+  cloneElement,
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import type {
   MouseEvent,
   ReactElement,
