@@ -27,7 +27,7 @@ export function CommandLine({
       className={cn(
         styles.commandLine,
         boxed && styles.boxed,
-        boxed && surface === 'chalkboard' && styles.chalkboard,
+        surface === 'chalkboard' && styles.chalkboard,
         className,
       )}
       style={style}

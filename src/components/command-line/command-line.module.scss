@@ -40,13 +40,26 @@
   flex-shrink: 0;
 }
 
+// Chalkboard applies to both forms: the command is an InlineCode, which inks
+// itself in paper text, so it needs re-chalking here or it reads dark-on-dark.
 .chalkboard {
+  .command {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: $color-chalkboard-chalk;
+  }
+
+  .prompt {
+    color: $color-chalkboard-accent;
+  }
+}
+
+.boxed.chalkboard {
   background-color: $color-chalkboard-bg;
   border-color: $color-chalkboard-border;
   color: $color-chalkboard-chalk;
   font-family: 'Courier Prime', monospace;
 
-  .prompt {
-    color: $color-chalkboard-accent;
+  .command {
+    background-color: transparent;
   }
 }
