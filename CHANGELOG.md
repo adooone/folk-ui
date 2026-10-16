@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.25.0](https://github.com/adooone/folk-ui/compare/v0.24.0...v0.25.0) (2026-10-16)
+
+
+### Features
+
+* **plans:** Add motion, small screens and deep links, then delete the old showcase ([6edb40a](https://github.com/adooone/folk-ui/commit/6edb40a705ac4033f923dc7f85367007d52e65c6))
+* **plans:** Add the chalkboard section and surface toggle ([1535889](https://github.com/adooone/folk-ui/commit/153588957a417079227bd97353c5c790e07260cf))
+* **plans:** Add the entry kit and registry ([0c31c59](https://github.com/adooone/folk-ui/commit/0c31c5925c58101dc7a857fb9259cf8883ab6aab))
+* **plans:** Build the desk and sheet shell ([8b76e25](https://github.com/adooone/folk-ui/commit/8b76e25efaf79d9844455e65b58a3c378a6e21dd))
+* **plans:** Move the detail panel into the left column ([55155cc](https://github.com/adooone/folk-ui/commit/55155ccf89741ef77585642e1d37c973af67d6a4))
+* **plans:** Port every component entry ([9fb6480](https://github.com/adooone/folk-ui/commit/9fb648060ea1fd3aa7a18b1ee1129b123d681464))
+* **plans:** Write welcome, tokens and docs ([b4b154f](https://github.com/adooone/folk-ui/commit/b4b154f8b51d08531467dfccb51c489f9674960f))
+* **showcase:** Drop the chalkboard section, stitch nav mark, stamp details ([acb396d](https://github.com/adooone/folk-ui/commit/acb396d0a52580bd7700cabff33bcc589e35ba35))
+
+
+### Bug Fixes
+
+* **command-line:** Chalk the command text on chalkboard ([435a0ac](https://github.com/adooone/folk-ui/commit/435a0ace5fb35c9a5ab1be0dc1b9f7e244a10d21))
+* **row,tests:** disable texture background on texture=false, drop dead shade merge, render real component tests ([3f6aa50](https://github.com/adooone/folk-ui/commit/3f6aa509e876fa93d164e6aaf3b8e54517ff0943))
+* **showcase:** Full-height plain sheet and func-ui type scale ([f192bbf](https://github.com/adooone/folk-ui/commit/f192bbf9a9218fe65559861796143a8fa725ca24))
+* **showcase:** Hug nav washes to their label, pencil nav arrow ([6618eb5](https://github.com/adooone/folk-ui/commit/6618eb5220333b07f035889c2aaaafa290e3a9b1))
+* **showcase:** Make the chalkboard sheet legible end to end ([04cb8c3](https://github.com/adooone/folk-ui/commit/04cb8c326a1f19421f587c33b88e02754264b3a5))
+* **tabs:** Pass surface to the tab buttons ([54f6c8f](https://github.com/adooone/folk-ui/commit/54f6c8fa3129eea3e329d4eb13b5de25305d3d62))
+
+
+### Documentation
+
+* **ideas:** Rebuild the showcase on func-ui's layout — plan ([2f23352](https://github.com/adooone/folk-ui/commit/2f23352ece5a38598ac960f2c4b163d4d6d40899))
+* **papercamp:** Archive IDEA-14 showcase rebuild as done ([2d5325b](https://github.com/adooone/folk-ui/commit/2d5325bd76712e325c22fd9cd19a4a352e4af2ca))
+* **papercamp:** Trim resolved suggestions from suggestions.md ([9ef84d8](https://github.com/adooone/folk-ui/commit/9ef84d8b9fa6460a4f179eb352941e3faf262ef6))
+
 ## [0.24.0](https://github.com/adooone/folk-ui/compare/v0.23.3...v0.24.0) (2026-10-15)
 
 
