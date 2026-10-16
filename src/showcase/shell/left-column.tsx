@@ -10,6 +10,7 @@ import type { EntryDef } from '../lib/entries';
 import { DetailPanel } from './detail-panel';
 import type { FontKey } from './fonts';
 import styles from './left-column.module.scss';
+import { NavArrow } from './nav-arrow';
 import type { SectionId } from './sections';
 import { sections } from './sections';
 import type { Surface } from './surface-context';
@@ -35,26 +36,23 @@ function NavList({
   onNavigate: (id: SectionId) => void;
 }) {
   return (
-    <nav className="mt-10 flex flex-col gap-1">
+    <nav className="mt-10 flex flex-col items-start gap-1">
       {sections.map((id) => (
-        <Button
-          key={id}
-          variant="ghost"
-          size="small"
-          isActive={active === id}
-          fullWidth
-          onClick={() => onNavigate(id)}
-          className="justify-start lowercase"
-        >
-          <span
-            aria-hidden="true"
-            className="mr-2"
-            style={{ color: colors.sketchInk, opacity: active === id ? 1 : 0.2 }}
+        <div key={id} className="flex items-center gap-1">
+          <NavArrow
+            className="shrink-0 transition-opacity"
+            style={{ color: colors.sketchInk, opacity: active === id ? 1 : 0.25 }}
+          />
+          <Button
+            variant="ghost"
+            size="small"
+            isActive={active === id}
+            onClick={() => onNavigate(id)}
+            className="lowercase"
           >
-            ➭
-          </span>
-          {id}
-        </Button>
+            {id}
+          </Button>
+        </div>
       ))}
     </nav>
   );
