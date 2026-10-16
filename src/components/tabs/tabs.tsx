@@ -89,6 +89,7 @@ export function Tabs({
                 }
               }}
               variant="ghost"
+              surface={surface}
               isActive={isActive}
               icon={item.icon}
               onClick={() => selectTab(item.id)}
