@@ -202,10 +202,11 @@ section, rendered in paper.
       All remaining entries into `src/showcase/entries/`, func's order first,
       including the 12 sidebar ghosts and 7 never-shown components.
       run: 4m2s · 248 in · 133.4k out · sonnet-5 · sess:5b5fac60-7c95-4623-893e-d127e195be5c
-- [ ] Move the detail panel into the left column
+- [x] Move the detail panel into the left column
       Closed by default; "details →" on each Entry; slides over the left
       column on the desk, column widens to ~40% while open; Esc/close restores
       nav; follows the active entry; bottom Drawer below `lg`.
+      run: 7m52s · 98 in · 37.4k out · sonnet-5 · sess:ebe6f471-7cd2-48b1-a418-0aa83d6928a8
 - [ ] Add the chalkboard section and surface toggle
       `#chalkboard` family band; left-column `surface` toggle flips the sheet;
       no per-demo chalkboard branches.

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../../package.json';
 import { ComponentsSection } from '../entries/components-section';
+import { entries } from '../lib/entries';
 import { Desk } from './desk';
 import { findScrollContainer } from './find-scroll-container';
 import { fonts } from './fonts';
@@ -15,7 +16,9 @@ export function Shell() {
   const [surface, setSurface] = useState<'paper' | 'chalkboard'>('paper');
   const [fontIndex, setFontIndex] = useState(0);
   const [scrollRoot, setScrollRoot] = useState<HTMLElement | null>(null);
+  const [openDetailId, setOpenDetailId] = useState<string | null>(null);
   const sheetWrapperRef = useRef<HTMLDivElement>(null);
+  const openEntry = entries.find((entry) => entry.id === openDetailId) ?? null;
 
   const font = fonts[fontIndex];
 
@@ -60,10 +63,16 @@ export function Shell() {
         font={font.key}
         onCycleFont={() => setFontIndex((i) => (i + 1) % fonts.length)}
         version={packageJson.version}
+        openEntry={openEntry}
+        onCloseDetail={() => setOpenDetailId(null)}
       />
       <Sheet ref={sheetWrapperRef}>
         {sections.map((id) =>
-          id === 'components' ? <ComponentsSection key={id} /> : <SectionStub key={id} id={id} />,
+          id === 'components' ? (
+            <ComponentsSection key={id} onOpenDetail={setOpenDetailId} />
+          ) : (
+            <SectionStub key={id} id={id} />
+          ),
         )}
       </Sheet>
     </Desk>
