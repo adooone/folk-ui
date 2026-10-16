@@ -198,9 +198,10 @@ section, rendered in paper.
       `entries.ts` registry with `category` and `props`; port Button,
       IconButton and Stamp as the first three entry files.
       run: 5m35s · 62 in · 16.8k out · sonnet-5 · sess:5b5fac60-7c95-4623-893e-d127e195be5c
-- [ ] Port every component entry
+- [x] Port every component entry
       All remaining entries into `src/showcase/entries/`, func's order first,
       including the 12 sidebar ghosts and 7 never-shown components.
+      run: 4m2s · 248 in · 133.4k out · sonnet-5 · sess:5b5fac60-7c95-4623-893e-d127e195be5c
 - [ ] Move the detail panel into the left column
       Closed by default; "details →" on each Entry; slides over the left
       column on the desk, column widens to ~40% while open; Esc/close restores
