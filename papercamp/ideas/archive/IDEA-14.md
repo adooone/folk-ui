@@ -177,7 +177,7 @@ section, rendered in paper.
     does now.
   - It has a close control. Esc also closes it and puts the nav back.
   - The column is 33% wide after the scrub. When the panel opens, the column
-    grows back to about 40% (420px at least) so the type column of the
+    grows back to about 40% (480px at least) so the type column of the
     `PropTable` fits. It shrinks again on close.
   - Below `lg` the panel becomes a bottom `Drawer`.
 - **`#components` has category sub-headings** (decided 2026-10-16). Typography,

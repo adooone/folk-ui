@@ -1,6 +1,7 @@
-import { colors } from '../../tokens';
+import { accentInk } from '../lib/accent';
 import type { Category } from '../lib/entries';
 import { entries } from '../lib/entries';
+import { useSurface } from '../shell/surface-context';
 import { CategoryHeading } from './category-heading';
 import { SectionBlock } from './section-block';
 
@@ -21,6 +22,7 @@ interface ComponentsSectionProps {
 }
 
 export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
+  const accent = accentInk(useSurface());
   const componentEntries = entries.filter((entry) => entry.section === 'components');
 
   return (
@@ -43,7 +45,7 @@ export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
                   type="button"
                   onClick={() => onOpenDetail(id)}
                   className="absolute right-0 top-0 font-mono text-xs lowercase tracking-wide"
-                  style={{ color: colors.accentGreen }}
+                  style={{ color: accent }}
                 >
                   details →
                 </button>

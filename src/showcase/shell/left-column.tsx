@@ -2,7 +2,6 @@ import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import { Button } from '../../components/button';
 import { Drawer } from '../../components/drawer';
-import { Label } from '../../components/label';
 import { PageTitle } from '../../components/page-title';
 import { Text } from '../../components/text';
 import { colors } from '../../tokens';
@@ -83,7 +82,7 @@ function BottomBlock({
         type="button"
         onClick={onCycleSurface}
         className="self-start font-mono text-sm font-semibold lowercase tracking-wide"
-        style={{ color: colors.accentGreen }}
+        style={{ color: colors.sketchInk }}
       >
         surface: {surface}
       </button>
@@ -91,7 +90,7 @@ function BottomBlock({
         type="button"
         onClick={onCycleFont}
         className="self-start font-mono text-sm font-semibold lowercase tracking-wide"
-        style={{ color: colors.accentGreen }}
+        style={{ color: colors.sketchInk }}
       >
         font: {font}
       </button>
@@ -124,7 +123,8 @@ export function LeftColumn({
   return (
     <div
       className={cn(
-        'flex w-full shrink-0 flex-col p-4 lg:h-full lg:w-[var(--left-column-width)] lg:p-12',
+        'flex w-full shrink-0 flex-col p-4 lg:h-full lg:w-[var(--left-column-width)]',
+        openEntry ? 'lg:p-0' : 'lg:p-12',
         !openEntry && styles.widthScrub,
       )}
       style={{ '--left-column-width': columnWidth } as CSSProperties}
@@ -135,7 +135,7 @@ export function LeftColumn({
           onClick={() => setDrawerOpen(true)}
           aria-label="Open navigation"
           className="font-mono text-sm lowercase tracking-wide"
-          style={{ color: colors.accentGreen }}
+          style={{ color: colors.sketchInk }}
         >
           ☰ folk ui
         </button>
@@ -147,7 +147,15 @@ export function LeftColumn({
       <Drawer open={drawerOpen} onClose={() => setDrawerOpen(false)} side="left" width={280}>
         <div className="flex h-full flex-col justify-between p-6">
           <div>
-            <Label style={{ color: colors.accentGreen }}>folk ui</Label>
+            <Text
+              face="mono"
+              size="sm"
+              weight="bold"
+              className="uppercase tracking-wide"
+              style={{ color: colors.sketchInk }}
+            >
+              folk ui
+            </Text>
             <NavList active={active} onNavigate={handleNavigate} />
           </div>
           <BottomBlock
@@ -170,7 +178,15 @@ export function LeftColumn({
           />
         ) : (
           <div className="hidden lg:block">
-            <Label style={{ color: colors.accentGreen }}>folk ui</Label>
+            <Text
+              face="mono"
+              size="sm"
+              weight="bold"
+              className="uppercase tracking-wide"
+              style={{ color: colors.sketchInk }}
+            >
+              folk ui
+            </Text>
             <PageTitle className="mt-3">
               Rough.
               <br />

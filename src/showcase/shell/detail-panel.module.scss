@@ -11,7 +11,6 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: $radius-lg;
   box-shadow: $shadow-paper-lg;
   background-color: $color-chalkboard-surface;
   background-image:
@@ -21,6 +20,12 @@
   background-size: 200px 200px, auto;
   color: $color-chalkboard-text;
   animation: slideIn 240ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Focused programmatically (tabIndex -1) by the focus trap — the panel itself
+  // isn't a control, so it shouldn't wear a focus ring.
+  &:focus {
+    outline: none;
+  }
 }
 
 .header {

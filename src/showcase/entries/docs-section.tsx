@@ -1,7 +1,7 @@
 import { CodeBlock } from '../../components/code-block';
-import { Label } from '../../components/label';
 import { Text } from '../../components/text';
-import { colors } from '../../tokens';
+import { accentInk } from '../lib/accent';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 import { SectionBlock } from './section-block';
 
@@ -49,6 +49,7 @@ const FOUNDATIONS = [
 ];
 
 export function DocsSection() {
+  const accent = accentInk(useSurface());
   return (
     <SectionBlock
       id="docs"
@@ -70,9 +71,9 @@ export function DocsSection() {
         <ul className="m-0 flex max-w-md list-none flex-col gap-2 p-0">
           {FOUNDATIONS.map((item) => (
             <li key={item.name}>
-              <Label as="span" style={{ color: colors.accentGreen }}>
+              <Text face="mono" size="sm" weight="semibold" style={{ color: accent }}>
                 {item.name}
-              </Label>{' '}
+              </Text>{' '}
               <Text tone="muted">— {item.description}</Text>
             </li>
           ))}

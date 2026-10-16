@@ -1,6 +1,8 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { colors, withAlpha } from '../../tokens';
 import { getSurfaceStyles } from '../../utils/textures';
+
+const TIMELINE_SCOPE = { timelineScope: '--components-progress' } as unknown as CSSProperties;
 
 interface DeskProps {
   children: ReactNode;
@@ -31,7 +33,11 @@ export function Desk({ children }: DeskProps) {
           }}
         />
       </div>
-      <div className="relative z-10 flex h-full flex-col lg:flex-row">{children}</div>
+      {/* timeline-scope lifts #components' view timeline up here, so the left
+          column (a sibling branch, not a descendant) can scrub its width on it. */}
+      <div className="relative z-10 flex h-full flex-col lg:flex-row" style={TIMELINE_SCOPE}>
+        {children}
+      </div>
     </div>
   );
 }

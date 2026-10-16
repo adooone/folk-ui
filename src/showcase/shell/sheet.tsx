@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import type { ReactNode } from 'react';
-import { Page } from '../../components/page';
-import { colors } from '../../tokens';
+import { colors, shadows } from '../../tokens';
+import { getSurfaceStyles } from '../../utils/textures';
 import type { Surface } from './surface-context';
 
 interface SheetProps {
@@ -9,6 +9,9 @@ interface SheetProps {
   surface: Surface;
 }
 
+// Full-height, edge-to-edge paper on the right — func-ui's Glass panel, in
+// paper. It is its own scroll container (the ref), so the section observer
+// and the width scrub key off this element directly.
 export const Sheet = forwardRef<HTMLDivElement, SheetProps>(function Sheet(
   { children, surface },
   ref,
@@ -16,14 +19,16 @@ export const Sheet = forwardRef<HTMLDivElement, SheetProps>(function Sheet(
   const isChalkboard = surface === 'chalkboard';
 
   return (
-    <div ref={ref} className="min-w-0 flex-1 p-4 lg:p-10">
-      <Page
-        className="h-full"
-        texture={isChalkboard ? 'chalkboard' : true}
-        style={isChalkboard ? { color: colors.chalkboardText } : undefined}
-      >
-        {children}
-      </Page>
+    <div
+      ref={ref}
+      className="relative min-w-0 flex-1 overflow-y-auto overflow-x-hidden"
+      style={{
+        ...getSurfaceStyles(isChalkboard ? 'chalkboard' : 'white'),
+        color: isChalkboard ? colors.chalkboardText : colors.textPrimary,
+        boxShadow: shadows['ink-md'],
+      }}
+    >
+      <div className="flex min-h-full flex-col gap-16 p-6 lg:p-12">{children}</div>
     </div>
   );
 });

@@ -1,4 +1,4 @@
-import { Label } from '../../components/label';
+import { Text } from '../../components/text';
 
 interface CategoryHeadingProps {
   children: string;
@@ -6,8 +6,8 @@ interface CategoryHeadingProps {
 
 export function CategoryHeading({ children }: CategoryHeadingProps) {
   return (
-    <Label as="h3" className="uppercase tracking-wide" style={{ opacity: 0.4 }}>
+    <Text as="h3" face="display" weight="semibold" tone="secondary" className="text-xl">
       {children}
-    </Label>
+    </Text>
   );
 }

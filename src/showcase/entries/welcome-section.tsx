@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Button } from '../../components/button';
 import { PageTitle } from '../../components/page-title';
 import { Text } from '../../components/text';
-import { colors } from '../../tokens';
+import { accentInk } from '../lib/accent';
+import { useSurface } from '../shell/surface-context';
 
 const PROVERBS = [
   { quote: 'Measure twice, cut once.', src: 'carpenter’s saying' },
@@ -25,10 +26,14 @@ interface WelcomeSectionProps {
 }
 
 export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
+  const accent = accentInk(useSurface());
   const [proverb] = useState(() => PROVERBS[Math.floor(Math.random() * PROVERBS.length)]);
 
   return (
-    <section id="welcome" className="flex min-h-full scroll-mt-10 flex-col">
+    <section
+      id="welcome"
+      className="flex min-h-[calc(100vh-3rem)] scroll-mt-10 flex-col lg:min-h-[calc(100vh-6rem)]"
+    >
       <div className="self-end text-right">
         <Text face="handwritten" size="lg" tone="muted" as="p" className="ml-auto max-w-sm">
           {proverb.quote}
@@ -39,7 +44,7 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
           weight="semibold"
           as="p"
           className="mt-2 lowercase"
-          style={{ color: colors.accentGreen }}
+          style={{ color: accent }}
         >
           {proverb.src}
         </Text>
@@ -63,7 +68,7 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
           weight="semibold"
           as="p"
           className="mt-2 lowercase"
-          style={{ color: colors.accentGreen }}
+          style={{ color: accent }}
         >
           @dendelion/folk-ui v{version}
         </Text>
@@ -73,7 +78,7 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
         {/* Raw anchors — Button renders a <button>, which can't carry an href */}
         <div className="mt-6 flex justify-end gap-6 font-mono text-sm lowercase">
           <a
-            style={{ color: colors.accentGreen }}
+            style={{ color: accent }}
             className="underline-offset-4 hover:underline"
             href={repoUrl}
             target="_blank"
@@ -82,7 +87,7 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
             github
           </a>
           <a
-            style={{ color: colors.accentGreen }}
+            style={{ color: accent }}
             className="underline-offset-4 hover:underline"
             href={npmUrl}
             target="_blank"

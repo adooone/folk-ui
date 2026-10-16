@@ -7,7 +7,6 @@ import { TokensSection } from '../entries/tokens-section';
 import { WelcomeSection } from '../entries/welcome-section';
 import { entries } from '../lib/entries';
 import { Desk } from './desk';
-import { findScrollContainer } from './find-scroll-container';
 import { fonts } from './fonts';
 import { LeftColumn } from './left-column';
 import type { SectionId } from './sections';
@@ -33,7 +32,7 @@ export function Shell() {
   const [supportsScrollTimeline] = useState(
     () => typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()'),
   );
-  const sheetWrapperRef = useRef<HTMLDivElement>(null);
+  const sheetRef = useRef<HTMLDivElement>(null);
   const openEntry = entries.find((entry) => entry.id === openDetailId) ?? null;
 
   const font = fonts[fontIndex];
@@ -43,9 +42,7 @@ export function Shell() {
   }, [font.family]);
 
   useEffect(() => {
-    const wrapper = sheetWrapperRef.current;
-    if (!wrapper) return;
-    setScrollRoot(findScrollContainer(wrapper));
+    setScrollRoot(sheetRef.current);
   }, []);
 
   useEffect(() => {
@@ -112,7 +109,7 @@ export function Shell() {
     return () => observer.disconnect();
   }, [scrollRoot, supportsScrollTimeline]);
 
-  const columnWidth = openEntry ? 'max(420px, 40%)' : `${50 - 17 * scrubProgress}%`;
+  const columnWidth = openEntry ? 'max(480px, 40%)' : `${50 - 17 * scrubProgress}%`;
 
   function scrollTo(id: SectionId) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -132,7 +129,7 @@ export function Shell() {
         onCloseDetail={() => setOpenDetailId(null)}
         columnWidth={columnWidth}
       />
-      <Sheet ref={sheetWrapperRef} surface={surface}>
+      <Sheet ref={sheetRef} surface={surface}>
         <SurfaceProvider value={surface}>
           {sections.map((id) => {
             if (id === 'welcome') {
