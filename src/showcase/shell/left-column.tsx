@@ -10,9 +10,9 @@ import type { EntryDef } from '../lib/entries';
 import { DetailPanel } from './detail-panel';
 import type { FontKey } from './fonts';
 import styles from './left-column.module.scss';
-import { NavArrow } from './nav-arrow';
 import type { SectionId } from './sections';
 import { sections } from './sections';
+import { StitchMark } from './stitch-mark';
 import type { Surface } from './surface-context';
 
 interface LeftColumnProps {
@@ -39,9 +39,9 @@ function NavList({
     <nav className="mt-10 flex flex-col items-start gap-1">
       {sections.map((id) => (
         <div key={id} className="flex items-center gap-1">
-          <NavArrow
+          <StitchMark
             className="shrink-0 transition-opacity"
-            style={{ color: colors.sketchInk, opacity: active === id ? 1 : 0.25 }}
+            style={{ color: colors.accentRoseDark, opacity: active === id ? 1 : 0 }}
           />
           <Button
             variant="ghost"

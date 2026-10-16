@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../../package.json';
-import { ChalkboardSection } from '../entries/chalkboard-section';
 import { ComponentsSection } from '../entries/components-section';
 import { DocsSection } from '../entries/docs-section';
 import { TokensSection } from '../entries/tokens-section';
@@ -143,9 +142,6 @@ export function Shell() {
             }
             if (id === 'components') {
               return <ComponentsSection key={id} onOpenDetail={setOpenDetailId} />;
-            }
-            if (id === 'chalkboard') {
-              return <ChalkboardSection key={id} onOpenDetail={setOpenDetailId} />;
             }
             if (id === 'tokens') {
               return <TokensSection key={id} />;

@@ -1,4 +1,4 @@
-import { accentInk } from '../lib/accent';
+import { Stamp } from '../../components/stamp';
 import type { Category } from '../lib/entries';
 import { entries } from '../lib/entries';
 import { useSurface } from '../shell/surface-context';
@@ -23,7 +23,7 @@ interface ComponentsSectionProps {
 }
 
 export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
-  const accent = accentInk(useSurface());
+  const surface = useSurface();
   const componentEntries = entries.filter((entry) => entry.section === 'components');
 
   return (
@@ -44,14 +44,15 @@ export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
                 <PaperDemoProvider value={paperOnly}>
                   <Entry />
                 </PaperDemoProvider>
-                <button
-                  type="button"
+                <Stamp
+                  size="small"
+                  variant="neutral"
+                  surface={surface}
                   onClick={() => onOpenDetail(id)}
-                  className="absolute right-0 top-0 font-mono text-xs lowercase tracking-wide"
-                  style={{ color: accent }}
+                  className="absolute right-0 top-0"
                 >
-                  details →
-                </button>
+                  details
+                </Stamp>
               </div>
             ))}
           </div>

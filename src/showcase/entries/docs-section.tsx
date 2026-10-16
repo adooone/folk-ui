@@ -44,7 +44,7 @@ const FOUNDATIONS = [
   {
     name: 'chalkboard',
     description:
-      'A second surface family — the same components, lit from a dark board instead of the page.',
+      'A second surface family — flip the whole sheet with the surface toggle in the left column.',
   },
 ];
 

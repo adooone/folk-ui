@@ -185,6 +185,10 @@ section, rendered in paper.
   Overlay become small headings inside the section. The left nav stays at
   section level, as in func. The registry carries `category` on each entry.
 - **The H1 is "Rough. Warm. Folk."** (decided 2026-10-16).
+- **The `#chalkboard` section was dropped** (decided 2026-10-16). The
+  left-column surface toggle already flips every entry onto the board, so the
+  band only duplicated them. The nav marks the active section with a red
+  cross-stitch, and "details" is a small pressable `Stamp`.
 
 ### Phases
 - [x] Build the desk and sheet shell
