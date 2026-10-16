@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../../package.json';
 import { ChalkboardSection } from '../entries/chalkboard-section';
 import { ComponentsSection } from '../entries/components-section';
+import { DocsSection } from '../entries/docs-section';
+import { TokensSection } from '../entries/tokens-section';
+import { WelcomeSection } from '../entries/welcome-section';
 import { entries } from '../lib/entries';
 import { Desk } from './desk';
 import { findScrollContainer } from './find-scroll-container';
 import { fonts } from './fonts';
 import { LeftColumn } from './left-column';
-import { SectionStub } from './section-stub';
 import type { SectionId } from './sections';
 import { sections } from './sections';
 import { Sheet } from './sheet';
@@ -72,13 +74,25 @@ export function Shell() {
       <Sheet ref={sheetWrapperRef} surface={surface}>
         <SurfaceProvider value={surface}>
           {sections.map((id) => {
+            if (id === 'welcome') {
+              return (
+                <WelcomeSection
+                  key={id}
+                  version={packageJson.version}
+                  onExplore={() => scrollTo('components')}
+                />
+              );
+            }
             if (id === 'components') {
               return <ComponentsSection key={id} onOpenDetail={setOpenDetailId} />;
             }
             if (id === 'chalkboard') {
               return <ChalkboardSection key={id} onOpenDetail={setOpenDetailId} />;
             }
-            return <SectionStub key={id} id={id} />;
+            if (id === 'tokens') {
+              return <TokensSection key={id} />;
+            }
+            return <DocsSection key={id} />;
           })}
         </SurfaceProvider>
       </Sheet>

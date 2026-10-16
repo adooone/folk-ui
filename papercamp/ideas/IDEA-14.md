@@ -211,9 +211,10 @@ section, rendered in paper.
       `#chalkboard` family band; left-column `surface` toggle flips the sheet;
       no per-demo chalkboard branches.
       run: 13m34s · 226 in · 56.9k out · sonnet-5 · sess:5a90c5a7-9eb3-4d74-a356-741e63ff86d2
-- [ ] Write welcome, tokens and docs
+- [x] Write welcome, tokens and docs
       Marquee welcome; tokens read from `tokens.ts` / `textures.ts` with the
       texture playground; install and foundations docs.
+      run: 5m4s · 82 in · 22.4k out · sonnet-5 · sess:398d4e57-3c32-4026-a1c6-56462860268e
 - [ ] Add motion, small screens and deep links, then delete the old showcase
       CSS scroll-timeline width scrub with fallback; `lg` header + Drawer;
       hash sync; remove the old pages, sidebars, footer, `lib/styles.ts`,

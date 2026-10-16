@@ -66,6 +66,15 @@ export const paperPreset = {
         'ruled-lines': '100% 32px',
         'ruled-grid': '100% 32px, 32px 32px',
       },
+      keyframes: {
+        // Seamless loop for content duplicated exactly twice
+        marquee: {
+          to: { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 55s linear infinite',
+      },
     },
   },
 };
