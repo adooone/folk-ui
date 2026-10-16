@@ -5,6 +5,7 @@ export default defineConfig({
   css: sharedCssConfig,
   test: {
     environment: 'node',
-    include: ['src/**/*.test.ts'],
+    css: true,
+    include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
   },
 });

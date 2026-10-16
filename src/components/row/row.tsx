@@ -115,9 +115,10 @@ export function resolveRowSurface(
           : { ...baseConfig, ...texture };
 
   if (fill) textureConfig.fill = fill;
-  if (shade !== undefined) textureConfig.shade = shade;
+  else if (shade !== undefined) textureConfig.shade = shade;
 
-  const { backgroundColor: textureFill, ...textureStyle } = getSurfaceStyles(textureConfig);
+  const { backgroundColor: textureFill, ...textureStyle } =
+    texture === false ? { backgroundColor: undefined } : getSurfaceStyles(textureConfig);
   return { textureConfig, textureClass, textureStyle, textureFill };
 }
 
