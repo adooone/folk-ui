@@ -2,7 +2,7 @@
 id: IDEA-14
 title: Rebuild the showcase on func-ui's layout
 type: feat
-status: planned
+status: in-progress
 created: 2026-10-16
 updated: 2026-10-16
 tags:
@@ -187,11 +187,12 @@ section, rendered in paper.
 - **The H1 is "Rough. Warm. Folk."** (decided 2026-10-16).
 
 ### Phases
-- [ ] Build the desk and sheet shell
+- [x] Build the desk and sheet shell
       Desk backdrop with watercolor blobs, left column (eyebrow, H1, section
       nav with observer, bottom toggles and version), scrolling `Page` sheet
       with empty section stubs; old pages unmounted from the shell but not yet
       deleted.
+      run: 6m55s · 112 in · 31.8k out · sonnet-5 · sess:db6b6d8e-c827-4f36-8cb6-cdb9bfc8fa0d
 - [ ] Add the entry kit and registry
       `SectionBlock`, `Entry`, `Control`, category sub-heading,
       `entries.ts` registry with `category` and `props`; port Button,
