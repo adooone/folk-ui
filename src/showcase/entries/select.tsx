@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Select } from '../../components/select';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -13,13 +14,10 @@ const OPTIONS = [
 const SIZES = ['small', 'medium', 'large'] as const;
 type Size = (typeof SIZES)[number];
 
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
-
 export function SelectEntry() {
   const [value, setValue] = useState('paper');
   const [size, setSize] = useState<Size>('medium');
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -35,7 +33,6 @@ export function SelectEntry() {
         surface={surface}
       />
       <Control label="size" options={SIZES} value={size} onChange={setSize} />
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }

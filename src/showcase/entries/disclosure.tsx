@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Disclosure } from '../../components/disclosure';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -9,6 +10,7 @@ type Underline = (typeof UNDERLINES)[number];
 export function DisclosureEntry() {
   const [expanded, setExpanded] = useState(false);
   const [underline, setUnderline] = useState<Underline>('off');
+  const surface = useSurface();
 
   return (
     <Entry name="Disclosure" description="A show-more/show-less toggle button.">
@@ -19,6 +21,7 @@ export function DisclosureEntry() {
           collapsedLabel="Show more"
           expandedLabel="Show less"
           underline={underline === 'on'}
+          surface={surface}
         >
           Show more
         </Disclosure>

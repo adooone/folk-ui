@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Progress } from '../../components/progress';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -9,11 +10,12 @@ type ValueOption = (typeof VALUES)[number];
 export function ProgressEntry() {
   const [value, setValue] = useState<ValueOption>('65');
   const [sketch, setSketch] = useState(false);
+  const surface = useSurface();
 
   return (
     <Entry name="Progress" description="A minimal progress bar with configurable color and height.">
       <div className="w-full max-w-sm">
-        <Progress value={Number(value)} height={6} sketch={sketch} />
+        <Progress value={Number(value)} height={6} sketch={sketch} surface={surface} />
       </div>
       <Control label="value" options={VALUES} value={value} onChange={setValue} />
       <Control

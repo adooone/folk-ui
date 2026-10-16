@@ -207,9 +207,10 @@ section, rendered in paper.
       column on the desk, column widens to ~40% while open; Esc/close restores
       nav; follows the active entry; bottom Drawer below `lg`.
       run: 7m52s · 98 in · 37.4k out · sonnet-5 · sess:ebe6f471-7cd2-48b1-a418-0aa83d6928a8
-- [ ] Add the chalkboard section and surface toggle
+- [x] Add the chalkboard section and surface toggle
       `#chalkboard` family band; left-column `surface` toggle flips the sheet;
       no per-demo chalkboard branches.
+      run: 13m34s · 226 in · 56.9k out · sonnet-5 · sess:5a90c5a7-9eb3-4d74-a356-741e63ff86d2
 - [ ] Write welcome, tokens and docs
       Marquee welcome; tokens read from `tokens.ts` / `textures.ts` with the
       texture playground; install and foundations docs.

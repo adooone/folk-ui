@@ -2,11 +2,9 @@ import { useState } from 'react';
 import { IconButton } from '../../components/icon-button';
 import { OverflowToolbar } from '../../components/overflow-toolbar';
 import { PullIcon, PushIcon, RefreshIcon } from '../../utils/icons';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
-
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
 
 const WIDTHS = ['narrow', 'wide'] as const;
 type Width = (typeof WIDTHS)[number];
@@ -17,7 +15,7 @@ const WIDTH_PX: Record<Width, number> = {
 };
 
 export function OverflowToolbarEntry() {
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
   const [width, setWidth] = useState<Width>('narrow');
 
   return (
@@ -56,7 +54,6 @@ export function OverflowToolbarEntry() {
           ]}
         />
       </div>
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
       <Control label="width" options={WIDTHS} value={width} onChange={setWidth} />
     </Entry>
   );

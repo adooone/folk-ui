@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { Accordion } from '../../components/accordion';
-import { Control } from './control';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
-
 export function AccordionEntry() {
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
   const [expanded, setExpanded] = useState(true);
 
   return (
@@ -25,7 +22,6 @@ export function AccordionEntry() {
           <p>Ships within 2-3 business days. Free returns within 30 days.</p>
         </Accordion>
       </div>
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }

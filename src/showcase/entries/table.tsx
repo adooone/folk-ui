@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { Stamp } from '../../components/stamp';
 import { Table } from '../../components/table';
-import { Control } from './control';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 
 interface EntryRow {
@@ -16,9 +15,6 @@ const ROWS: EntryRow[] = [
   { item: 'Ink Wash', type: 'Sketch', status: 'Blocked' },
 ];
 
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
-
 const VARIANT_MAP: Record<EntryRow['status'], 'success' | 'warning' | 'error'> = {
   Done: 'success',
   Draft: 'warning',
@@ -26,7 +22,7 @@ const VARIANT_MAP: Record<EntryRow['status'], 'success' | 'warning' | 'error'> =
 };
 
 export function TableEntry() {
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -49,7 +45,6 @@ export function TableEntry() {
           data={ROWS}
         />
       </div>
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }

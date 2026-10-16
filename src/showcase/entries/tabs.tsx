@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { Tabs } from '../../components/tabs';
-import { Control } from './control';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
-
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
 
 const ITEMS = [
   { id: 'design', label: 'Design', children: <p>Design tools and visual language.</p> },
@@ -13,7 +10,7 @@ const ITEMS = [
 ];
 
 export function TabsEntry() {
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
   const [activeKey, setActiveKey] = useState('design');
 
   return (
@@ -21,7 +18,6 @@ export function TabsEntry() {
       <div style={{ width: '100%', maxWidth: 420 }}>
         <Tabs items={ITEMS} activeKey={activeKey} onSelect={setActiveKey} surface={surface} />
       </div>
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }

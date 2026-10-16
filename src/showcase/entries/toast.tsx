@@ -1,5 +1,6 @@
 import { Button } from '../../components/button';
 import { ToastProvider, useToast } from '../../components/toast';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 
 function ToastButton() {
@@ -18,12 +19,14 @@ function ToastButton() {
 }
 
 export function ToastEntry() {
+  const surface = useSurface();
+
   return (
     <Entry
       name="Toast"
       description="A positioned, stacked notification with a title, description, and auto-dismiss."
     >
-      <ToastProvider position="bottom-right">
+      <ToastProvider position="bottom-right" surface={surface}>
         <ToastButton />
       </ToastProvider>
     </Entry>

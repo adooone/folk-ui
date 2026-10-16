@@ -8,11 +8,12 @@ import { DetailPanel } from './detail-panel';
 import type { FontKey } from './fonts';
 import type { SectionId } from './sections';
 import { sections } from './sections';
+import type { Surface } from './surface-context';
 
 interface LeftColumnProps {
   active: SectionId;
   onNavigate: (id: SectionId) => void;
-  surface: 'paper' | 'chalkboard';
+  surface: Surface;
   onCycleSurface: () => void;
   font: FontKey;
   onCycleFont: () => void;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { IconButton } from '../../components/icon-button';
 import { Menu } from '../../components/menu';
 import { MoreIcon } from '../../utils/icons';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -10,6 +11,7 @@ type Align = (typeof ALIGNS)[number];
 
 export function MenuEntry() {
   const [align, setAlign] = useState<Align>('start');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -18,6 +20,7 @@ export function MenuEntry() {
     >
       <Menu
         align={align}
+        surface={surface}
         trigger={<IconButton icon={<MoreIcon />} label="More options" variant="ghost" />}
         items={[
           { id: 'edit', label: 'Edit' },

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ListItem } from '../../components/list-item';
 import { Stamp } from '../../components/stamp';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -30,6 +31,7 @@ function FileIcon() {
 export function ListItemEntry() {
   const [size, setSize] = useState<Size>('medium');
   const [active, setActive] = useState('plans');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -39,6 +41,7 @@ export function ListItemEntry() {
       <div className="w-full max-w-sm space-y-1">
         <ListItem
           size={size}
+          surface={surface}
           active={active === 'plans'}
           onClick={() => setActive('plans')}
           icon={<FileIcon />}
@@ -48,13 +51,14 @@ export function ListItemEntry() {
         </ListItem>
         <ListItem
           size={size}
+          surface={surface}
           active={active === 'focus'}
           onClick={() => setActive('focus')}
           icon={<FileIcon />}
         >
           Focus
         </ListItem>
-        <ListItem size={size} disabled icon={<FileIcon />}>
+        <ListItem size={size} surface={surface} disabled icon={<FileIcon />}>
           Archived
         </ListItem>
       </div>

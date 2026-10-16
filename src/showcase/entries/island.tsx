@@ -1,14 +1,10 @@
-import { useState } from 'react';
 import { Button } from '../../components/button';
 import { Island } from '../../components/island';
-import { Control } from './control';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
-
 export function IslandEntry() {
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -23,7 +19,6 @@ export function IslandEntry() {
           </Button>
         </Island>
       </div>
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }

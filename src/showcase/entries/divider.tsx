@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Divider } from '../../components/divider';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -9,6 +10,7 @@ type Orientation = (typeof ORIENTATIONS)[number];
 export function DividerEntry() {
   const [orientation, setOrientation] = useState<Orientation>('horizontal');
   const [sketch, setSketch] = useState(false);
+  const surface = useSurface();
 
   return (
     <Entry
@@ -18,12 +20,12 @@ export function DividerEntry() {
       {orientation === 'vertical' ? (
         <div className="flex h-10 items-center gap-4">
           <span>Left</span>
-          <Divider orientation="vertical" sketch={sketch} />
+          <Divider orientation="vertical" sketch={sketch} surface={surface} />
           <span>Right</span>
         </div>
       ) : (
         <div className="w-full max-w-sm">
-          <Divider label="or" sketch={sketch} />
+          <Divider label="or" sketch={sketch} surface={surface} />
         </div>
       )}
       <Control

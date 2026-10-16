@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { RadioGroup } from '../../components/radio';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -12,13 +13,10 @@ const OPTIONS = [
 const ORIENTATIONS = ['vertical', 'horizontal'] as const;
 type Orientation = (typeof ORIENTATIONS)[number];
 
-const SURFACES = ['paper', 'chalkboard'] as const;
-type Surface = (typeof SURFACES)[number];
-
 export function RadioEntry() {
   const [value, setValue] = useState('kraft');
   const [orientation, setOrientation] = useState<Orientation>('vertical');
-  const [surface, setSurface] = useState<Surface>('paper');
+  const surface = useSurface();
 
   return (
     <Entry
@@ -38,7 +36,6 @@ export function RadioEntry() {
         value={orientation}
         onChange={setOrientation}
       />
-      <Control label="surface" options={SURFACES} value={surface} onChange={setSurface} />
     </Entry>
   );
 }
