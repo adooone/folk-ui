@@ -18,7 +18,9 @@ export function TooltipEntry() {
       description="An inked label with a hand-drawn arrow, shown on hover or focus."
     >
       <Tooltip content="Saves your changes" placement={placement} surface={surface}>
-        <Button variant="primary">Save</Button>
+        <Button variant="primary" surface={surface}>
+          Save
+        </Button>
       </Tooltip>
       <Control label="placement" options={PLACEMENTS} value={placement} onChange={setPlacement} />
     </Entry>

@@ -26,7 +26,8 @@ interface WelcomeSectionProps {
 }
 
 export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
-  const accent = accentInk(useSurface());
+  const surface = useSurface();
+  const accent = accentInk(surface);
   const [proverb] = useState(() => PROVERBS[Math.floor(Math.random() * PROVERBS.length)]);
 
   return (
@@ -61,7 +62,8 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
       </div>
 
       <div className="self-end text-right">
-        <PageTitle>Welcome!</PageTitle>
+        {/* PageTitle inks itself in paper text; inherit the sheet's colour instead */}
+        <PageTitle style={{ color: 'inherit' }}>Welcome!</PageTitle>
         <Text
           face="mono"
           size="sm"
@@ -72,7 +74,7 @@ export function WelcomeSection({ version, onExplore }: WelcomeSectionProps) {
         >
           @dendelion/folk-ui v{version}
         </Text>
-        <Button variant="primary" className="mt-6" onClick={onExplore}>
+        <Button variant="primary" surface={surface} className="mt-6" onClick={onExplore}>
           Explore components
         </Button>
         {/* Raw anchors — Button renders a <button>, which can't carry an href */}

@@ -15,7 +15,7 @@ export function ModalEntry() {
 
   return (
     <Entry name="Modal" description="A paper sheet overlay with a textured backdrop.">
-      <Button variant="primary" onClick={() => setOpen(true)}>
+      <Button variant="primary" surface={surface} onClick={() => setOpen(true)}>
         Open Modal
       </Button>
       <Modal

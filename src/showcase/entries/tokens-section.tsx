@@ -4,6 +4,7 @@ import { canvas, colors, fontSize, ink, paper, radii, shadows, space } from '../
 import { TextureSwatches } from '../components/texture-swatches';
 import { textures } from '../lib/textures';
 import type { TextureConfig } from '../lib/textures';
+import { PaperDemoProvider } from '../shell/surface-context';
 import { Entry } from './entry';
 import { SectionBlock } from './section-block';
 
@@ -146,33 +147,41 @@ export function TokensSection() {
         </div>
       </Entry>
 
-      <Entry
-        name="Textures"
-        description="Every surface grain in textureMap, plus the wobble and ruled-line playground."
-      >
-        <div className="flex w-full max-w-lg flex-col gap-6">
-          <div className="grid grid-cols-4 gap-3">
-            {textures.map((texture) => (
-              <div key={texture.key} className="flex flex-col items-center gap-1">
-                <div
-                  className="h-14 w-14 rounded-lg border"
-                  style={{
-                    backgroundColor: texture.color,
-                    backgroundImage: texture.bg,
-                    backgroundRepeat: 'repeat',
-                    backgroundSize: '100px 100px',
-                    borderColor: colors.borderDefault,
-                  }}
-                />
-                <Text face="mono" size="3xs" tone="muted">
-                  {texture.key}
-                </Text>
-              </div>
-            ))}
+      {/* TextureSwatches is a paper-only playground */}
+      <PaperDemoProvider value>
+        <Entry
+          name="Textures"
+          description="Every surface grain in textureMap, plus the wobble and ruled-line playground."
+        >
+          <div className="flex w-full max-w-lg flex-col gap-6">
+            <div className="grid grid-cols-4 gap-3">
+              {textures.map((texture) => (
+                <div key={texture.key} className="flex flex-col items-center gap-1">
+                  <div
+                    className="h-14 w-14 rounded-lg border"
+                    style={{
+                      backgroundColor: texture.color,
+                      backgroundImage: texture.bg,
+                      backgroundRepeat: 'repeat',
+                      backgroundSize: '100px 100px',
+                      borderColor: colors.borderDefault,
+                    }}
+                  />
+                  <Text face="mono" size="3xs" tone="muted">
+                    {texture.key}
+                  </Text>
+                </div>
+              ))}
+            </div>
+            <TextureSwatches
+              value={textureConfig}
+              onChange={setTextureConfig}
+              compact
+              showPreview
+            />
           </div>
-          <TextureSwatches value={textureConfig} onChange={setTextureConfig} compact showPreview />
-        </div>
-      </Entry>
+        </Entry>
+      </PaperDemoProvider>
     </SectionBlock>
   );
 }

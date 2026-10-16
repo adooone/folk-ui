@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { IconButton } from '../../components/icon-button';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -24,11 +25,12 @@ function HeartIcon() {
 }
 
 export function IconButtonEntry() {
+  const surface = useSurface();
   const [variant, setVariant] = useState<Variant>('default');
 
   return (
     <Entry name="IconButton" description="An icon-only button sharing Button's blob background.">
-      <IconButton icon={<HeartIcon />} label="Like" variant={variant} />
+      <IconButton icon={<HeartIcon />} label="Like" variant={variant} surface={surface} />
       <Control label="variant" options={VARIANTS} value={variant} onChange={setVariant} />
     </Entry>
   );

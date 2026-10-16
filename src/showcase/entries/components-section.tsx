@@ -2,6 +2,7 @@ import { accentInk } from '../lib/accent';
 import type { Category } from '../lib/entries';
 import { entries } from '../lib/entries';
 import { useSurface } from '../shell/surface-context';
+import { PaperDemoProvider } from '../shell/surface-context';
 import { CategoryHeading } from './category-heading';
 import { SectionBlock } from './section-block';
 
@@ -38,9 +39,11 @@ export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
         return (
           <div key={category} className="flex flex-col gap-10">
             <CategoryHeading>{category}</CategoryHeading>
-            {categoryEntries.map(({ id, Entry }) => (
+            {categoryEntries.map(({ id, Entry, paperOnly = false }) => (
               <div key={id} className="relative">
-                <Entry />
+                <PaperDemoProvider value={paperOnly}>
+                  <Entry />
+                </PaperDemoProvider>
                 <button
                   type="button"
                   onClick={() => onOpenDetail(id)}

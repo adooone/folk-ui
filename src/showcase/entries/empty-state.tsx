@@ -1,8 +1,10 @@
 import { Button } from '../../components/button';
 import { EmptyState } from '../../components/empty-state';
+import { useSurface } from '../shell/surface-context';
 import { Entry } from './entry';
 
 export function EmptyStateEntry() {
+  const surface = useSurface();
   return (
     <Entry
       name="EmptyState"
@@ -11,7 +13,11 @@ export function EmptyStateEntry() {
       <div className="w-full max-w-sm">
         <EmptyState
           message="No notes yet."
-          action={<Button variant="ghost">Create a note</Button>}
+          action={
+            <Button variant="ghost" surface={surface}>
+              Create a note
+            </Button>
+          }
         />
       </div>
     </Entry>

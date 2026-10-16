@@ -5,10 +5,12 @@ import { Entry } from './entry';
 
 function ToastButton() {
   const { toast } = useToast();
+  const surface = useSurface();
 
   return (
     <Button
       variant="secondary"
+      surface={surface}
       onClick={() =>
         toast({ variant: 'success', title: 'Published', description: 'Your article is live.' })
       }

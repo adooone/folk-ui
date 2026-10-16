@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../../components/button';
 import { Drawer } from '../../components/drawer';
+import { useSurface } from '../shell/surface-context';
 import { Control } from './control';
 import { Entry } from './entry';
 
@@ -8,6 +9,7 @@ const SIDES = ['left', 'right'] as const;
 type Side = (typeof SIDES)[number];
 
 export function DrawerEntry() {
+  const surface = useSurface();
   const [open, setOpen] = useState(false);
   const [side, setSide] = useState<Side>('left');
 
@@ -16,7 +18,7 @@ export function DrawerEntry() {
       name="Drawer"
       description="A slide-in panel with a blurred scrim, a focus trap, and Escape-to-close."
     >
-      <Button variant="primary" onClick={() => setOpen(true)}>
+      <Button variant="primary" surface={surface} onClick={() => setOpen(true)}>
         Open Drawer
       </Button>
       <Drawer open={open} onClose={() => setOpen(false)} side={side} width={280}>

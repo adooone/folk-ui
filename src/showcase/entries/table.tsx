@@ -39,7 +39,11 @@ export function TableEntry() {
               key: 'status',
               header: 'Status',
               width: 4,
-              cell: (row) => <Stamp variant={VARIANT_MAP[row.status]}>{row.status}</Stamp>,
+              cell: (row) => (
+                <Stamp variant={VARIANT_MAP[row.status]} surface={surface}>
+                  {row.status}
+                </Stamp>
+              ),
             },
           ]}
           data={ROWS}

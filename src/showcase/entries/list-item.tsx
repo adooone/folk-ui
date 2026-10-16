@@ -45,7 +45,11 @@ export function ListItemEntry() {
           active={active === 'plans'}
           onClick={() => setActive('plans')}
           icon={<FileIcon />}
-          action={<Stamp variant="info">3</Stamp>}
+          action={
+            <Stamp variant="info" surface={surface}>
+              3
+            </Stamp>
+          }
         >
           Plans
         </ListItem>

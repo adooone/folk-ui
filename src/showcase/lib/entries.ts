@@ -78,6 +78,11 @@ export interface EntryDef {
   category: Category;
   props: PropDef[];
   Entry: ComponentType;
+  /**
+   * The component inks itself in paper colours and has no chalkboard surface,
+   * so on a chalkboard sheet its demo sits on a paper inset to stay legible.
+   */
+  paperOnly?: boolean;
 }
 
 const disabledProp: PropDef = {
@@ -185,6 +190,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'page-title',
+    paperOnly: true,
     name: 'PageTitle',
     description: "The large display heading reserved for a page's own title.",
     section: 'components',
@@ -271,6 +277,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'inline-code',
+    paperOnly: true,
     name: 'InlineCode',
     description: 'A monospace snippet for referencing identifiers inline with prose.',
     section: 'components',
@@ -1411,6 +1418,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'sidebar-field',
+    paperOnly: true,
     name: 'SidebarField',
     description: 'Pairs a SidebarLabel with a form control in a sidebar.',
     section: 'components',
@@ -1435,6 +1443,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'sidebar-item',
+    paperOnly: true,
     name: 'SidebarItem',
     description: 'A clickable row inside a sidebar list, with icon, count, and active/busy states.',
     section: 'components',
@@ -1484,6 +1493,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'setting-row',
+    paperOnly: true,
     name: 'SettingRow',
     description: 'A label-left, control-right row for a settings panel.',
     section: 'components',
@@ -1514,6 +1524,7 @@ export const entries: EntryDef[] = [
   },
   {
     id: 'setting-group',
+    paperOnly: true,
     name: 'SettingGroup',
     description: 'Groups several SettingRows under a shared heading.',
     section: 'components',
