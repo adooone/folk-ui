@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../../package.json';
+import { ComponentsSection } from '../entries/components-section';
 import { Desk } from './desk';
 import { findScrollContainer } from './find-scroll-container';
 import { fonts } from './fonts';
@@ -61,9 +62,9 @@ export function Shell() {
         version={packageJson.version}
       />
       <Sheet ref={sheetWrapperRef}>
-        {sections.map((id) => (
-          <SectionStub key={id} id={id} />
-        ))}
+        {sections.map((id) =>
+          id === 'components' ? <ComponentsSection key={id} /> : <SectionStub key={id} id={id} />,
+        )}
       </Sheet>
     </Desk>
   );

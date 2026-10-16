@@ -193,10 +193,11 @@ section, rendered in paper.
       with empty section stubs; old pages unmounted from the shell but not yet
       deleted.
       run: 6m55s · 112 in · 31.8k out · sonnet-5 · sess:db6b6d8e-c827-4f36-8cb6-cdb9bfc8fa0d
-- [ ] Add the entry kit and registry
+- [x] Add the entry kit and registry
       `SectionBlock`, `Entry`, `Control`, category sub-heading,
       `entries.ts` registry with `category` and `props`; port Button,
       IconButton and Stamp as the first three entry files.
+      run: 5m35s · 62 in · 16.8k out · sonnet-5 · sess:5b5fac60-7c95-4623-893e-d127e195be5c
 - [ ] Port every component entry
       All remaining entries into `src/showcase/entries/`, func's order first,
       including the 12 sidebar ghosts and 7 never-shown components.
