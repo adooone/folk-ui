@@ -1,0 +1,26 @@
+@media (min-width: 1024px) {
+  @supports (animation-timeline: scroll()) {
+    .widthScrub {
+      animation-name: narrowColumn;
+      animation-timeline: --components-progress;
+      animation-range: entry 0% entry 100%;
+      animation-fill-mode: both;
+      animation-timing-function: linear;
+    }
+
+    @keyframes narrowColumn {
+      from {
+        width: 50%;
+      }
+      to {
+        width: 33%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .widthScrub {
+        animation: none;
+      }
+    }
+  }
+}

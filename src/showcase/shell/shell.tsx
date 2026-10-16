@@ -16,12 +16,23 @@ import { Sheet } from './sheet';
 import type { Surface } from './surface-context';
 import { SurfaceProvider } from './surface-context';
 
+function isSectionId(value: string): value is SectionId {
+  return (sections as readonly string[]).includes(value);
+}
+
 export function Shell() {
-  const [active, setActive] = useState<SectionId>('welcome');
+  const [active, setActive] = useState<SectionId>(() => {
+    const hash = window.location.hash.slice(1);
+    return isSectionId(hash) ? hash : 'welcome';
+  });
   const [surface, setSurface] = useState<Surface>('paper');
   const [fontIndex, setFontIndex] = useState(0);
   const [scrollRoot, setScrollRoot] = useState<HTMLElement | null>(null);
   const [openDetailId, setOpenDetailId] = useState<string | null>(null);
+  const [scrubProgress, setScrubProgress] = useState(0);
+  const [supportsScrollTimeline] = useState(
+    () => typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()'),
+  );
   const sheetWrapperRef = useRef<HTMLDivElement>(null);
   const openEntry = entries.find((entry) => entry.id === openDetailId) ?? null;
 
@@ -36,6 +47,14 @@ export function Shell() {
     if (!wrapper) return;
     setScrollRoot(findScrollContainer(wrapper));
   }, []);
+
+  useEffect(() => {
+    if (!scrollRoot) return;
+    const hash = window.location.hash.slice(1);
+    if (isSectionId(hash) && hash !== 'welcome') {
+      document.getElementById(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }, [scrollRoot]);
 
   useEffect(() => {
     if (!scrollRoot) return;
@@ -54,9 +73,50 @@ export function Shell() {
     return () => observer.disconnect();
   }, [scrollRoot]);
 
-  const scrollTo = (id: SectionId) => {
+  useEffect(() => {
+    const newHash = `#${active}`;
+    if (window.location.hash !== newHash) window.history.replaceState(null, '', newHash);
+  }, [active]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      if (isSectionId(hash)) scrollTo(hash);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  useEffect(() => {
+    if (supportsScrollTimeline || !scrollRoot) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const target = document.getElementById('components');
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      (observerEntries) => {
+        const entry = observerEntries[0];
+        if (!entry?.rootBounds) return;
+        const progress = Math.min(
+          1,
+          Math.max(
+            0,
+            (entry.rootBounds.height - (entry.boundingClientRect.top - entry.rootBounds.top)) /
+              entry.rootBounds.height,
+          ),
+        );
+        setScrubProgress(progress);
+      },
+      { root: scrollRoot, threshold: Array.from({ length: 21 }, (_, i) => i / 20) },
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [scrollRoot, supportsScrollTimeline]);
+
+  const columnWidth = openEntry ? 'max(420px, 40%)' : `${50 - 17 * scrubProgress}%`;
+
+  function scrollTo(id: SectionId) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
+  }
 
   return (
     <Desk>
@@ -70,6 +130,7 @@ export function Shell() {
         version={packageJson.version}
         openEntry={openEntry}
         onCloseDetail={() => setOpenDetailId(null)}
+        columnWidth={columnWidth}
       />
       <Sheet ref={sheetWrapperRef} surface={surface}>
         <SurfaceProvider value={surface}>

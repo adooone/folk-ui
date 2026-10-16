@@ -2,7 +2,7 @@
 id: IDEA-14
 title: Rebuild the showcase on func-ui's layout
 type: feat
-status: in-progress
+status: review
 created: 2026-10-16
 updated: 2026-10-16
 tags:
@@ -215,7 +215,8 @@ section, rendered in paper.
       Marquee welcome; tokens read from `tokens.ts` / `textures.ts` with the
       texture playground; install and foundations docs.
       run: 5m4s · 82 in · 22.4k out · sonnet-5 · sess:398d4e57-3c32-4026-a1c6-56462860268e
-- [ ] Add motion, small screens and deep links, then delete the old showcase
+- [x] Add motion, small screens and deep links, then delete the old showcase
       CSS scroll-timeline width scrub with fallback; `lg` header + Drawer;
       hash sync; remove the old pages, sidebars, footer, `lib/styles.ts`,
       `category-colors.ts` and `font-context.tsx`.
+      run: 6m40s · 70 in · 35.8k out · sonnet-5 · sess:dd1f718e-5fe5-4dfd-a6ff-d24d6528dbc3

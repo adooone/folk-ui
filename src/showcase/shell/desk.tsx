@@ -31,7 +31,7 @@ export function Desk({ children }: DeskProps) {
           }}
         />
       </div>
-      <div className="relative z-10 flex h-full">{children}</div>
+      <div className="relative z-10 flex h-full flex-col lg:flex-row">{children}</div>
     </div>
   );
 }

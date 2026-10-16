@@ -16,7 +16,7 @@ export const Sheet = forwardRef<HTMLDivElement, SheetProps>(function Sheet(
   const isChalkboard = surface === 'chalkboard';
 
   return (
-    <div ref={ref} className="min-w-0 flex-1 p-10">
+    <div ref={ref} className="min-w-0 flex-1 p-4 lg:p-10">
       <Page
         className="h-full"
         texture={isChalkboard ? 'chalkboard' : true}
