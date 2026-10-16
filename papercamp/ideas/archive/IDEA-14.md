@@ -2,7 +2,7 @@
 id: IDEA-14
 title: Rebuild the showcase on func-ui's layout
 type: feat
-status: review
+status: done
 created: 2026-10-16
 updated: 2026-10-16
 tags:
