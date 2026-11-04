@@ -40,3 +40,7 @@ ds-bundle/
 .design-sync/.cache/
 .design-sync/learnings/
 .design-sync/node_modules/
+
+papercamp/capacity.json
+papercamp/batch.json
+# paper-camp:end
