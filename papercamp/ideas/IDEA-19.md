@@ -42,3 +42,4 @@ under Vite 8 with motion intact.
       run: 1m7s · 12 in · 1.6k out · sonnet-5-5 · sess:83015d2a-6bae-4d62-8ff3-13c8ad81e716
 - [x] Vite 8, Vitest 5, Biome 2 and the library bumps
       Vite 8 with plugin-react-swc 4 and vite-plugin-dts 5, Vitest 5 with jsdom 31, `biome migrate` with the config committed, framer-motion 14, tailwind-merge 3, stylelint 18, sass-embedded and the minors; `publint` and `pnpm run ci` green; CHANGELOG entry as a feat.
+      run: 5m8s · 64 in · 11.2k out · sonnet-5-5 · sess:83015d2a-6bae-4d62-8ff3-13c8ad81e716
