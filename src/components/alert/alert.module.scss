@@ -94,7 +94,7 @@
 
 .chalkboard {
   color: $color-chalkboard-text;
-  --sketch-stroke: #{rgba($chalkboard-border-base, 0.4)};
+  --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.4)};
 
   .surface {
     background-color: $color-chalkboard-surface;
@@ -107,7 +107,7 @@
     color: $color-chalkboard-muted;
 
     &:hover {
-      background: rgba($chalkboard-border-base, 0.08);
+      background: rgba(var(--pui-chalk-border-base), 0.08);
     }
   }
 }

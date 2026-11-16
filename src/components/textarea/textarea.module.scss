@@ -150,11 +150,11 @@
   }
 
   .field {
-    --sketch-fill: #{rgba($chalkboard-border-base, 0.08)};
-    --sketch-stroke: #{rgba($chalkboard-border-base, 0.3)};
+    --sketch-fill: #{rgba(var(--pui-chalk-border-base), 0.08)};
+    --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.3)};
 
     &:hover {
-      --sketch-stroke: #{rgba($chalkboard-border-base, 0.45)};
+      --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.45)};
     }
 
     &:focus-within {
@@ -173,11 +173,11 @@
   }
 
   .disabled {
-    --sketch-fill: #{rgba($chalkboard-border-base, 0.04)};
-    --sketch-stroke: #{rgba($chalkboard-border-base, 0.12)};
+    --sketch-fill: #{rgba(var(--pui-chalk-border-base), 0.04)};
+    --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.12)};
 
     &:hover {
-      --sketch-stroke: #{rgba($chalkboard-border-base, 0.12)};
+      --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.12)};
     }
   }
 }

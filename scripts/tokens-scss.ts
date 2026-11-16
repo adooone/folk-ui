@@ -34,7 +34,7 @@ function fontStack(family: readonly string[]): string {
   return family.map((name) => (generics.has(name) ? name : `'${name}'`)).join(', ');
 }
 
-const chalkboardBaseRgb = hexToRgb(colors.chalkboardBorderBase);
+const chalkboardBaseTriple = hexToRgb(colors.chalkboardBorderBase).replace(/^rgb\(|\)$/g, '');
 const sketchInkRgb = hexToRgb(colors.sketchInk);
 
 const out = `// Canonical source of truth for all design tokens.
@@ -72,30 +72,45 @@ $color-accent-purple-light: ${colors.accentPurpleLight};
 $color-accent-purple-dark: ${colors.accentPurpleDark};
 
 // Base for every translucent chalkboard border/ring below.
-$chalkboard-border-base: ${chalkboardBaseRgb};
+$chalk-default-border-base: ${chalkboardBaseTriple};
+$chalkboard-border-base: var(--pui-chalk-border-base);
 
-$color-chalkboard-bg: ${colors.chalkboardBg};
-$color-chalkboard-surface: ${colors.chalkboardSurface};
-$color-chalkboard-light: ${colors.chalkboardLight};
-$color-chalkboard-text: ${colors.chalkboardText};
-$color-chalkboard-chalk: ${colors.chalkboardChalk};
-$color-chalkboard-muted: ${colors.chalkboardMuted};
-$color-chalkboard-muted-dim: ${colors.chalkboardMutedDim}; // darker muted for code-block syntax (intentional, see N2)
-$color-chalkboard-accent: ${colors.chalkboardAccent};
-$color-chalkboard-rose: ${colors.chalkboardRose};
-$color-chalkboard-border: rgba($chalkboard-border-base, 0.2);
-$color-chalkboard-toggle-active: ${colors.chalkboardToggleActive};
+@function chalk-alpha($color, $alpha) {
+  @return color-mix(in srgb, $color #{$alpha * 100}%, transparent);
+}
 
-$chalkboard-border-06: rgba($chalkboard-border-base, 0.06);
-$chalkboard-border-08: rgba($chalkboard-border-base, 0.08);
-$chalkboard-border-12: rgba($chalkboard-border-base, 0.12);
-$chalkboard-border-15: rgba($chalkboard-border-base, 0.15);
-$chalkboard-border-25: rgba($chalkboard-border-base, 0.25);
+$chalk-default-bg: ${colors.chalkboardBg};
+$color-chalkboard-bg: var(--pui-chalk-bg);
+$chalk-default-surface: ${colors.chalkboardSurface};
+$color-chalkboard-surface: var(--pui-chalk-surface);
+$chalk-default-light: ${colors.chalkboardLight};
+$color-chalkboard-light: var(--pui-chalk-light);
+$chalk-default-text: ${colors.chalkboardText};
+$color-chalkboard-text: var(--pui-chalk-text);
+$chalk-default-chalk: ${colors.chalkboardChalk};
+$color-chalkboard-chalk: var(--pui-chalk-chalk);
+$chalk-default-muted: ${colors.chalkboardMuted};
+$color-chalkboard-muted: var(--pui-chalk-muted);
+$chalk-default-muted-dim: ${colors.chalkboardMutedDim};
+$color-chalkboard-muted-dim: var(--pui-chalk-muted-dim);
+$chalk-default-accent: ${colors.chalkboardAccent};
+$color-chalkboard-accent: var(--pui-chalk-accent);
+$chalk-default-rose: ${colors.chalkboardRose};
+$color-chalkboard-rose: var(--pui-chalk-rose);
+$color-chalkboard-border: rgba(var(--pui-chalk-border-base), 0.2);
+$chalk-default-toggle-active: ${colors.chalkboardToggleActive};
+$color-chalkboard-toggle-active: var(--pui-chalk-toggle-active);
+
+$chalkboard-border-06: rgba(var(--pui-chalk-border-base), 0.06);
+$chalkboard-border-08: rgba(var(--pui-chalk-border-base), 0.08);
+$chalkboard-border-12: rgba(var(--pui-chalk-border-base), 0.12);
+$chalkboard-border-15: rgba(var(--pui-chalk-border-base), 0.15);
+$chalkboard-border-25: rgba(var(--pui-chalk-border-base), 0.25);
 
 // Chalkboard button ring strokes
-$chalkboard-ring-stroke: rgba($chalkboard-border-base, 0.45);
-$chalkboard-ring-stroke-active: rgba($chalkboard-border-base, 0.65);
-$chalkboard-ring-ghost: rgba($chalkboard-border-base, 0.35);
+$chalkboard-ring-stroke: rgba(var(--pui-chalk-border-base), 0.45);
+$chalkboard-ring-stroke-active: rgba(var(--pui-chalk-border-base), 0.65);
+$chalkboard-ring-ghost: rgba(var(--pui-chalk-border-base), 0.35);
 
 $color-canvas-base: ${colors.canvasBase};
 $color-canvas-300: ${colors.canvas300};   // kraft texture / island bg (canvas.300 in tailwind) — see N1

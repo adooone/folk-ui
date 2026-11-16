@@ -33,30 +33,45 @@ $color-accent-purple-light: #C2B5D8;
 $color-accent-purple-dark: #6E5F8E;
 
 // Base for every translucent chalkboard border/ring below.
-$chalkboard-border-base: rgb(200, 210, 195);
+$chalk-default-border-base: 200, 210, 195;
+$chalkboard-border-base: var(--pui-chalk-border-base);
 
-$color-chalkboard-bg: #142e22;
-$color-chalkboard-surface: #1e3a2d;
-$color-chalkboard-light: #264a3a;
-$color-chalkboard-text: #e8e4d9;
-$color-chalkboard-chalk: #d4e8cb;
-$color-chalkboard-muted: #a8b5a0;
-$color-chalkboard-muted-dim: #5e7a68; // darker muted for code-block syntax (intentional, see N2)
-$color-chalkboard-accent: #a8c49a;
-$color-chalkboard-rose: #e8a0a0;
-$color-chalkboard-border: rgba($chalkboard-border-base, 0.2);
-$color-chalkboard-toggle-active: #3D5A42;
+@function chalk-alpha($color, $alpha) {
+  @return color-mix(in srgb, $color #{$alpha * 100}%, transparent);
+}
 
-$chalkboard-border-06: rgba($chalkboard-border-base, 0.06);
-$chalkboard-border-08: rgba($chalkboard-border-base, 0.08);
-$chalkboard-border-12: rgba($chalkboard-border-base, 0.12);
-$chalkboard-border-15: rgba($chalkboard-border-base, 0.15);
-$chalkboard-border-25: rgba($chalkboard-border-base, 0.25);
+$chalk-default-bg: #142e22;
+$color-chalkboard-bg: var(--pui-chalk-bg);
+$chalk-default-surface: #1e3a2d;
+$color-chalkboard-surface: var(--pui-chalk-surface);
+$chalk-default-light: #264a3a;
+$color-chalkboard-light: var(--pui-chalk-light);
+$chalk-default-text: #e8e4d9;
+$color-chalkboard-text: var(--pui-chalk-text);
+$chalk-default-chalk: #d4e8cb;
+$color-chalkboard-chalk: var(--pui-chalk-chalk);
+$chalk-default-muted: #a8b5a0;
+$color-chalkboard-muted: var(--pui-chalk-muted);
+$chalk-default-muted-dim: #5e7a68;
+$color-chalkboard-muted-dim: var(--pui-chalk-muted-dim);
+$chalk-default-accent: #a8c49a;
+$color-chalkboard-accent: var(--pui-chalk-accent);
+$chalk-default-rose: #e8a0a0;
+$color-chalkboard-rose: var(--pui-chalk-rose);
+$color-chalkboard-border: rgba(var(--pui-chalk-border-base), 0.2);
+$chalk-default-toggle-active: #3D5A42;
+$color-chalkboard-toggle-active: var(--pui-chalk-toggle-active);
+
+$chalkboard-border-06: rgba(var(--pui-chalk-border-base), 0.06);
+$chalkboard-border-08: rgba(var(--pui-chalk-border-base), 0.08);
+$chalkboard-border-12: rgba(var(--pui-chalk-border-base), 0.12);
+$chalkboard-border-15: rgba(var(--pui-chalk-border-base), 0.15);
+$chalkboard-border-25: rgba(var(--pui-chalk-border-base), 0.25);
 
 // Chalkboard button ring strokes
-$chalkboard-ring-stroke: rgba($chalkboard-border-base, 0.45);
-$chalkboard-ring-stroke-active: rgba($chalkboard-border-base, 0.65);
-$chalkboard-ring-ghost: rgba($chalkboard-border-base, 0.35);
+$chalkboard-ring-stroke: rgba(var(--pui-chalk-border-base), 0.45);
+$chalkboard-ring-stroke-active: rgba(var(--pui-chalk-border-base), 0.65);
+$chalkboard-ring-ghost: rgba(var(--pui-chalk-border-base), 0.35);
 
 $color-canvas-base: #F0EAD8;
 $color-canvas-300: #E5DBC4;   // kraft texture / island bg (canvas.300 in tailwind) — see N1
@@ -120,16 +135,11 @@ $color-input-focus-shadow: rgba(143, 185, 150, 0.15);
 $color-overlay-light: rgba(255, 255, 255, 0.1);
 $color-overlay-light-border: rgba(255, 255, 255, 0.15);
 
-$fallback-serif: 'Cormorant Garamond', 'Georgia', serif;
-$fallback-title: 'Luminari', 'Cormorant Garamond', 'Georgia', serif;
-$fallback-hand: 'Caveat', cursive;
-$fallback-mono: 'JetBrains Mono', monospace;
-
-$font-family-serif: var(--paper-font-default, #{$fallback-serif});
+$font-family-serif: 'Cormorant Garamond', 'Georgia', serif;
 $font-family-sans: 'Inter', system-ui, sans-serif;
-$font-family-display: var(--paper-font-title, #{$fallback-title});
-$font-family-handwritten: var(--paper-font-hand, #{$fallback-hand});
-$font-family-mono: var(--paper-font-mono, #{$fallback-mono});
+$font-family-display: 'Luminari', 'Cormorant Garamond', 'Georgia', serif;
+$font-family-handwritten: 'Caveat', cursive;
+$font-family-mono: 'JetBrains Mono', monospace;
 
 // Type scale — base = 1rem = 16px
 $font-size-3xs: 0.625rem; // 10px

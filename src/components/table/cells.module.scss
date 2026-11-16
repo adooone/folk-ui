@@ -36,8 +36,8 @@
 }
 
 .chalkToggleActive {
-  background: rgba($color-chalkboard-chalk, 0.12);
-  border-color: rgba($color-chalkboard-chalk, 0.25);
+  background: chalk-alpha($color-chalkboard-chalk, 0.12);
+  border-color: chalk-alpha($color-chalkboard-chalk, 0.25);
   color: $color-chalkboard-chalk;
 }
 
@@ -73,7 +73,7 @@
 .chalkInput {
   font-size: $font-size-xs;
   border-color: $color-chalkboard-border;
-  background: rgba($color-chalkboard-bg, 0.6);
+  background: chalk-alpha($color-chalkboard-bg, 0.6);
   color: $color-chalkboard-chalk;
 
   &::placeholder {
@@ -81,8 +81,8 @@
   }
 
   &:focus {
-    border-color: rgba($color-chalkboard-chalk, 0.4);
-    box-shadow: 0 0 0 2px rgba($color-chalkboard-chalk, 0.1);
+    border-color: chalk-alpha($color-chalkboard-chalk, 0.4);
+    box-shadow: 0 0 0 2px chalk-alpha($color-chalkboard-chalk, 0.1);
   }
 }
 

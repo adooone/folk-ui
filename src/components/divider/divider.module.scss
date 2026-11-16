@@ -101,8 +101,8 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba($color-chalkboard-chalk, 0.25) 12%,
-      rgba($color-chalkboard-chalk, 0.25) 88%,
+      chalk-alpha($color-chalkboard-chalk, 0.25) 12%,
+      chalk-alpha($color-chalkboard-chalk, 0.25) 88%,
       transparent
     );
   }
@@ -114,15 +114,15 @@
   .sketch,
   .sketchLabelled,
   .sketchVertical {
-    --sketch-stroke: #{rgba($chalkboard-border-base, 0.32)};
+    --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.32)};
   }
 
   &.vertical {
     background: linear-gradient(
       180deg,
       transparent,
-      rgba($color-chalkboard-chalk, 0.25) 12%,
-      rgba($color-chalkboard-chalk, 0.25) 88%,
+      chalk-alpha($color-chalkboard-chalk, 0.25) 12%,
+      chalk-alpha($color-chalkboard-chalk, 0.25) 88%,
       transparent
     );
   }

@@ -517,7 +517,7 @@ $pencil-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
 .chalkboardFrame {
   filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.3));
-  --sketch-stroke: #{rgba($chalkboard-border-base, 0.3)};
+  --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.3)};
 }
 
 .chalkboardWrapper {
@@ -539,7 +539,7 @@ $pencil-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     color: $color-chalkboard-chalk;
     font-family: $font-family-mono;
     font-size: $font-size-sm;
-    background-color: rgba($color-chalkboard-bg, 0.4);
+    background-color: chalk-alpha($color-chalkboard-bg, 0.4);
     background-image: none;
     border: 1px solid $color-chalkboard-border;
     border-radius: $radius-sm;

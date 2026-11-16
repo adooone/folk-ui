@@ -97,8 +97,8 @@
 
 .chalkboard {
   color: $color-chalkboard-chalk;
-  --avatar-fill: #{rgba($color-chalkboard-chalk, 0.08)};
-  --sketch-stroke: #{rgba($chalkboard-border-base, 0.4)};
+  --avatar-fill: #{chalk-alpha($color-chalkboard-chalk, 0.08)};
+  --sketch-stroke: #{rgba(var(--pui-chalk-border-base), 0.4)};
 
   .surface {
     background-image: none;
