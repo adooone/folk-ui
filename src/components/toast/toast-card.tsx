@@ -25,7 +25,7 @@ export interface ToastCardProps {
 export function ToastCard({ record, surface = 'paper', onDismiss }: ToastCardProps) {
   const remaining = useRef(record.duration);
   const startedAt = useRef(0);
-  const timer = useRef<ReturnType<typeof setTimeout>>();
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const schedule = useCallback(
     (ms: number) => {

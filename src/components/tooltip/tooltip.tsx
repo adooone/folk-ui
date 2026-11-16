@@ -88,7 +88,7 @@ export function Tooltip({
   // forwardRef), so a ref passed via cloneElement would silently fail.
   const wrapperRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLSpanElement | null>(null);
-  const showTimer = useRef<ReturnType<typeof setTimeout>>();
+  const showTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   const open = !disabled && !!content && !dismissed && (hovering || focused);
 

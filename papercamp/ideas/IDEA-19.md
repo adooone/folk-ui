@@ -37,7 +37,7 @@ with no peer warning; a React 18 app still installs it; the showcase runs
 under Vite 8 with motion intact.
 
 ### Phases
-- [ ] React 19 peer and runtime
+- [x] React 19 peer and runtime
       Widen the peer ranges, move the dev dependency and `@types/react*` to 19.3, fix what the tests and showcase surface (ref handling, `act`), `pnpm run ci` green.
 - [ ] Vite 8, Vitest 5, Biome 2 and the library bumps
       Vite 8 with plugin-react-swc 4 and vite-plugin-dts 5, Vitest 5 with jsdom 31, `biome migrate` with the config committed, framer-motion 14, tailwind-merge 3, stylelint 18, sass-embedded and the minors; `publint` and `pnpm run ci` green; CHANGELOG entry as a feat.
