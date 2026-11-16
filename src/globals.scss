@@ -30,7 +30,7 @@
   --pui-chalk-pass-text: #{chalkfill.$color-chalk-pass-text};
   --pui-chalk-fail-text: #{chalkfill.$color-chalk-fail-text};
   --pui-chalk-running-text: #{chalkfill.$color-chalk-running-text};
-  --pui-chalk-texture: url($chalkboard-texture-data-uri);
+  --pui-chalk-texture: url("#{$chalkboard-texture-data-uri}");
 }
 
 [data-chalk='grey'] {
@@ -48,7 +48,7 @@
   --pui-chalk-pass-fill: #2f4a3a;
   --pui-chalk-fail-fill: #523333;
   --pui-chalk-running-fill: #4f4530;
-  --pui-chalk-texture: url($chalkboard-texture-grey-data-uri);
+  --pui-chalk-texture: url("#{$chalkboard-texture-grey-data-uri}");
 }
 
 body {
