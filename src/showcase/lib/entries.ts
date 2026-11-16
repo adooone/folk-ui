@@ -57,7 +57,6 @@ import { TextEntry } from '../entries/text';
 import { TextareaEntry } from '../entries/textarea';
 import { ToastEntry } from '../entries/toast';
 import { TooltipEntry } from '../entries/tooltip';
-import type { SectionId } from '../shell/sections';
 
 export type Category =
   | 'Typography'
@@ -74,7 +73,6 @@ export interface EntryDef {
   id: string;
   name: string;
   description: string;
-  section: SectionId;
   category: Category;
   props: PropDef[];
   Entry: ComponentType;
@@ -98,7 +96,6 @@ export const entries: EntryDef[] = [
     name: 'Text',
     description:
       'The base typography primitive, combining face, size, weight and tone into a single class list.',
-    section: 'components',
     category: 'Typography',
     props: [
       {
@@ -150,7 +147,6 @@ export const entries: EntryDef[] = [
     id: 'label',
     name: 'Label',
     description: 'A small handwritten tag used to annotate fields and sections.',
-    section: 'components',
     category: 'Typography',
     props: [
       { name: 'children', type: 'ReactNode', description: 'Label content' },
@@ -162,7 +158,6 @@ export const entries: EntryDef[] = [
     id: 'section-heading',
     name: 'SectionHeading',
     description: 'A dimmed display-face heading used to introduce a block of content.',
-    section: 'components',
     category: 'Typography',
     props: [
       { name: 'children', type: 'ReactNode', description: 'Heading content' },
@@ -174,7 +169,6 @@ export const entries: EntryDef[] = [
     id: 'meta-line',
     name: 'MetaLine',
     description: 'A faint, non-wrapping handwritten line for timestamps and secondary metadata.',
-    section: 'components',
     category: 'Typography',
     props: [
       { name: 'children', type: 'ReactNode', description: 'Meta content' },
@@ -193,7 +187,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'PageTitle',
     description: "The large display heading reserved for a page's own title.",
-    section: 'components',
     category: 'Typography',
     props: [{ name: 'children', type: 'ReactNode', description: 'Title content' }],
     Entry: PageTitleEntry,
@@ -202,7 +195,6 @@ export const entries: EntryDef[] = [
     id: 'facts-grid',
     name: 'FactsGrid',
     description: 'Label-over-value facts, laid out as an auto-fit grid or a flex-wrap inline row.',
-    section: 'components',
     category: 'Typography',
     props: [
       {
@@ -232,7 +224,6 @@ export const entries: EntryDef[] = [
     name: 'CodeBlock',
     description:
       'A filename-headered code block with a copy button and a paper or chalkboard surface.',
-    section: 'components',
     category: 'Typography',
     props: [
       { name: 'code', type: 'string', required: true, description: 'Code to display' },
@@ -250,7 +241,6 @@ export const entries: EntryDef[] = [
     id: 'command-line',
     name: 'CommandLine',
     description: 'A copyable shell command, shown bare or boxed with a prompt glyph.',
-    section: 'components',
     category: 'Typography',
     props: [
       { name: 'command', type: 'string', required: true, description: 'Command text' },
@@ -280,7 +270,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'InlineCode',
     description: 'A monospace snippet for referencing identifiers inline with prose.',
-    section: 'components',
     category: 'Typography',
     props: [{ name: 'children', type: 'ReactNode', description: 'Code content' }],
     Entry: InlineCodeEntry,
@@ -289,7 +278,6 @@ export const entries: EntryDef[] = [
     id: 'button',
     name: 'Button',
     description: 'A blob-backed button with five variants and a hover wobble.',
-    section: 'components',
     category: 'Basic',
     props: [
       {
@@ -339,7 +327,6 @@ export const entries: EntryDef[] = [
     id: 'icon-button',
     name: 'IconButton',
     description: "An icon-only button sharing Button's blob background.",
-    section: 'components',
     category: 'Basic',
     props: [
       {
@@ -379,7 +366,6 @@ export const entries: EntryDef[] = [
     id: 'stamp',
     name: 'Stamp',
     description: 'A small status chip stamped onto the page.',
-    section: 'components',
     category: 'Basic',
     props: [
       {
@@ -461,7 +447,6 @@ export const entries: EntryDef[] = [
     name: 'Avatar',
     description:
       'Circular or organic-square identity marker that shows an image, or initials over a deterministic tint when none is given.',
-    section: 'components',
     category: 'Basic',
     props: [
       {
@@ -505,7 +490,6 @@ export const entries: EntryDef[] = [
     name: 'ListItem',
     description:
       'Versatile row component with a rectangular blob background, active state, and icon/action slots for navigation or lists.',
-    section: 'components',
     category: 'Basic',
     props: [
       { name: 'active', type: 'boolean', default: 'false', description: 'Highlight active state' },
@@ -555,7 +539,6 @@ export const entries: EntryDef[] = [
     name: 'Icon',
     description:
       'Wraps any icon content in a wobbly blob background, with configurable size and wobble intensity.',
-    section: 'components',
     category: 'Basic',
     props: [
       {
@@ -585,7 +568,6 @@ export const entries: EntryDef[] = [
     id: 'checkbox',
     name: 'Checkbox',
     description: 'Hand-drawn checkbox with wobbly blob background and ink checkmark.',
-    section: 'components',
     category: 'Form',
     props: [
       { name: 'checked', type: 'boolean', required: true, description: 'Checked state' },
@@ -635,7 +617,6 @@ export const entries: EntryDef[] = [
     name: 'Radio',
     description:
       'Single-select control mirroring Checkbox — circular box with an ink dot and watercolor blob.',
-    section: 'components',
     category: 'Form',
     props: [
       {
@@ -665,7 +646,6 @@ export const entries: EntryDef[] = [
     id: 'switch',
     name: 'Switch',
     description: 'Toggle control with a sliding ink thumb and watercolor track when on.',
-    section: 'components',
     category: 'Form',
     props: [
       { name: 'checked', type: 'boolean', description: 'On/off state' },
@@ -691,7 +671,6 @@ export const entries: EntryDef[] = [
     id: 'input',
     name: 'Input',
     description: 'Hand-drawn text field with paper texture background and ink underline on focus.',
-    section: 'components',
     category: 'Form',
     props: [
       { name: 'label', type: 'string', description: 'Field label' },
@@ -718,7 +697,6 @@ export const entries: EntryDef[] = [
     id: 'select',
     name: 'Select',
     description: 'Paper-styled dropdown with a hand-drawn chevron icon and textured background.',
-    section: 'components',
     category: 'Form',
     props: [
       { name: 'label', type: 'string', description: 'Field label' },
@@ -757,7 +735,6 @@ export const entries: EntryDef[] = [
     id: 'textarea',
     name: 'Textarea',
     description: 'Multi-line text input with paper texture background and ink underline on focus.',
-    section: 'components',
     category: 'Form',
     props: [
       { name: 'label', type: 'string', description: 'Field label' },
@@ -783,7 +760,6 @@ export const entries: EntryDef[] = [
     id: 'swatch',
     name: 'Swatch',
     description: 'A small clickable color or texture chip used to pick a surface tone.',
-    section: 'components',
     category: 'Form',
     props: [
       {
@@ -806,7 +782,6 @@ export const entries: EntryDef[] = [
     id: 'page',
     name: 'Page',
     description: 'Textured paper page container with optional watercolor accent.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -852,7 +827,6 @@ export const entries: EntryDef[] = [
     id: 'layout',
     name: 'Layout',
     description: 'Page shell with sidebar navigation, header bar, and main content area.',
-    section: 'components',
     category: 'Layout',
     props: [
       { name: 'title', type: 'string', description: 'Header title' },
@@ -900,7 +874,6 @@ export const entries: EntryDef[] = [
     id: 'card',
     name: 'Card',
     description: 'Paper surface container with a pencil border and configurable elevation.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -958,7 +931,6 @@ export const entries: EntryDef[] = [
     name: 'Divider',
     description:
       'Separator drawn as a single pencil stroke that fades at the ends, with an optional handwritten label.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -991,7 +963,6 @@ export const entries: EntryDef[] = [
     id: 'accordion',
     name: 'Accordion',
     description: 'Collapsible content section with a rotating disclosure triangle.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -1027,7 +998,6 @@ export const entries: EntryDef[] = [
     name: 'Table',
     description:
       'Paper-styled data table with grid, ruled, or plain surface variants and a textured toolbar.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -1069,7 +1039,6 @@ export const entries: EntryDef[] = [
     name: 'Row',
     description:
       "Grid-based row for ruled lists and card surfaces, sharing RowSkeleton's texture and shadow.",
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -1125,7 +1094,6 @@ export const entries: EntryDef[] = [
     name: 'RowSkeleton',
     description:
       "Ghost placeholder row sharing Row's texture, SketchBorder, and shadow so a loading row matches the row that replaces it.",
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -1170,7 +1138,6 @@ export const entries: EntryDef[] = [
     name: 'SketchBorder',
     description:
       'Hand-drawn SVG outline absolutely positioned over its parent, the pencil border used by Card, Page, and Row.',
-    section: 'components',
     category: 'Layout',
     props: [
       {
@@ -1242,7 +1209,6 @@ export const entries: EntryDef[] = [
     name: 'Island',
     description:
       'A floating container fixed to the viewport, for controls that should always stay visible.',
-    section: 'components',
     category: 'Navigation',
     props: [
       {
@@ -1272,7 +1238,6 @@ export const entries: EntryDef[] = [
     name: 'Tabs',
     description:
       'Button-based tab controls with a Card content area, composing Button and Card from the design system.',
-    section: 'components',
     category: 'Navigation',
     props: [
       {
@@ -1306,7 +1271,6 @@ export const entries: EntryDef[] = [
     name: 'Breadcrumb',
     description:
       'A navigation trail rendered as ink-colored links with a chevron separator; the final crumb marks the current page.',
-    section: 'components',
     category: 'Navigation',
     props: [
       {
@@ -1330,7 +1294,6 @@ export const entries: EntryDef[] = [
     name: 'Pagination',
     description:
       'Prev/next controls with a sibling-aware page range and ellipsis for long sequences.',
-    section: 'components',
     category: 'Navigation',
     props: [
       { name: 'page', type: 'number', required: true, description: 'Current page, 1-indexed' },
@@ -1361,7 +1324,6 @@ export const entries: EntryDef[] = [
     name: 'OverflowToolbar',
     description:
       'Measures its width and folds the lowest-priority items into a trailing Menu until the rest fit, re-measuring on resize.',
-    section: 'components',
     category: 'Navigation',
     props: [
       {
@@ -1384,7 +1346,6 @@ export const entries: EntryDef[] = [
     id: 'sidebar-card',
     name: 'SidebarCard',
     description: 'A parchment-textured card sized for a sidebar panel.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       {
@@ -1401,7 +1362,6 @@ export const entries: EntryDef[] = [
     id: 'sidebar-label',
     name: 'SidebarLabel',
     description: 'A small heading-like label used above a sidebar section.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       { name: 'children', type: 'ReactNode', description: 'Label text.' },
@@ -1421,7 +1381,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'SidebarField',
     description: 'Pairs a SidebarLabel with a form control in a sidebar.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       {
@@ -1446,7 +1405,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'SidebarItem',
     description: 'A clickable row inside a sidebar list, with icon, count, and active/busy states.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       {
@@ -1496,7 +1454,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'SettingRow',
     description: 'A label-left, control-right row for a settings panel.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       {
@@ -1527,7 +1484,6 @@ export const entries: EntryDef[] = [
     paperOnly: true,
     name: 'SettingGroup',
     description: 'Groups several SettingRows under a shared heading.',
-    section: 'components',
     category: 'Sidebar & settings',
     props: [
       {
@@ -1567,7 +1523,6 @@ export const entries: EntryDef[] = [
     id: 'alert',
     name: 'Alert',
     description: 'Compact single-line message with an icon and a tinted accent border.',
-    section: 'components',
     category: 'Feedback',
     props: [
       {
@@ -1608,7 +1563,6 @@ export const entries: EntryDef[] = [
     name: 'Toast',
     description:
       'Positioned, stacked notifications with a title, description, auto-dismiss, and manual close.',
-    section: 'components',
     category: 'Feedback',
     props: [
       {
@@ -1646,7 +1600,6 @@ export const entries: EntryDef[] = [
     id: 'progress',
     name: 'Progress',
     description: 'Minimal progress bar with configurable color and height.',
-    section: 'components',
     category: 'Feedback',
     props: [
       { name: 'value', type: 'number', required: true, description: 'Current progress value' },
@@ -1673,7 +1626,6 @@ export const entries: EntryDef[] = [
     name: 'Spinner',
     description:
       'Indeterminate loading indicator — a rotating ink arc that respects reduced-motion.',
-    section: 'components',
     category: 'Feedback',
     props: [
       {
@@ -1703,7 +1655,6 @@ export const entries: EntryDef[] = [
     name: 'Skeleton',
     description:
       'Loading placeholder in text, rectangle, and circle variants with a paper-grain pulse.',
-    section: 'components',
     category: 'Feedback',
     props: [
       {
@@ -1728,7 +1679,6 @@ export const entries: EntryDef[] = [
     name: 'EmptyState',
     description:
       'A gentle placeholder for a list or panel with nothing in it yet, with an optional illustration and action.',
-    section: 'components',
     category: 'Feedback',
     props: [
       { name: 'message', type: 'ReactNode', required: true, description: 'Primary message text' },
@@ -1749,7 +1699,6 @@ export const entries: EntryDef[] = [
     id: 'arc-gauge',
     name: 'ArcGauge',
     description: 'A 280° rough track with the value arc drawn over it.',
-    section: 'components',
     category: 'Charts',
     props: [
       { name: 'value', type: 'number', required: true, description: 'Current value' },
@@ -1779,7 +1728,6 @@ export const entries: EntryDef[] = [
     id: 'bar-chart',
     name: 'BarChart',
     description: 'Solid bars with a hachured portion for a failed or excluded part of the value.',
-    section: 'components',
     category: 'Charts',
     props: [
       {
@@ -1812,7 +1760,6 @@ export const entries: EntryDef[] = [
     id: 'stacked-bar',
     name: 'StackedBar',
     description: 'A single bar split into colored segments proportional to their value.',
-    section: 'components',
     category: 'Charts',
     props: [
       {
@@ -1830,7 +1777,6 @@ export const entries: EntryDef[] = [
     id: 'commit-rail',
     name: 'CommitRail',
     description: 'A stroke plus a dot per row, dashed amber until pushed.',
-    section: 'components',
     category: 'Charts',
     props: [
       {
@@ -1859,7 +1805,6 @@ export const entries: EntryDef[] = [
     id: 'modal',
     name: 'Modal',
     description: 'A paper sheet overlay with a textured backdrop.',
-    section: 'components',
     category: 'Overlay',
     props: [
       { name: 'open', type: 'boolean', required: true, description: 'Modal visibility' },
@@ -1891,7 +1836,6 @@ export const entries: EntryDef[] = [
     id: 'drawer',
     name: 'Drawer',
     description: 'A slide-in panel with a blurred scrim, a focus trap, and Escape-to-close.',
-    section: 'components',
     category: 'Overlay',
     props: [
       { name: 'open', type: 'boolean', required: true, description: 'Drawer visibility' },
@@ -1916,7 +1860,6 @@ export const entries: EntryDef[] = [
     id: 'tooltip',
     name: 'Tooltip',
     description: 'An inked label with a hand-drawn arrow, shown on hover or focus.',
-    section: 'components',
     category: 'Overlay',
     props: [
       { name: 'content', type: 'ReactNode', required: true, description: 'Tooltip body' },
@@ -1948,7 +1891,6 @@ export const entries: EntryDef[] = [
     name: 'Menu',
     description:
       'Anchored action menu with roving keyboard focus, separators, and a danger tone for destructive items.',
-    section: 'components',
     category: 'Overlay',
     props: [
       {
@@ -1983,7 +1925,6 @@ export const entries: EntryDef[] = [
     id: 'disclosure',
     name: 'Disclosure',
     description: 'A show-more/show-less toggle button that reveals extra content.',
-    section: 'components',
     category: 'Overlay',
     props: [
       {

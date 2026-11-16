@@ -27,7 +27,6 @@ export function Shell() {
   const [fontIndex, setFontIndex] = useState(0);
   const [scrollRoot, setScrollRoot] = useState<HTMLElement | null>(null);
   const [openDetailId, setOpenDetailId] = useState<string | null>(null);
-  const [scrubProgress, setScrubProgress] = useState(0);
   const [supportsScrollTimeline] = useState(
     () => typeof CSS !== 'undefined' && CSS.supports('animation-timeline: scroll()'),
   );
@@ -100,15 +99,18 @@ export function Shell() {
               entry.rootBounds.height,
           ),
         );
-        setScrubProgress(progress);
+        document.documentElement.style.setProperty('--scrub-progress', String(progress));
       },
       { root: scrollRoot, threshold: Array.from({ length: 21 }, (_, i) => i / 20) },
     );
     observer.observe(target);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.documentElement.style.removeProperty('--scrub-progress');
+    };
   }, [scrollRoot, supportsScrollTimeline]);
 
-  const columnWidth = openEntry ? 'max(480px, 40%)' : `${50 - 17 * scrubProgress}%`;
+  const columnWidth = openEntry ? 'max(480px, 40%)' : 'calc(50% - 17% * var(--scrub-progress, 0))';
 
   function scrollTo(id: SectionId) {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });

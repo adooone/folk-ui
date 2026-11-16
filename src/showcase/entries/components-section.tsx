@@ -24,7 +24,6 @@ interface ComponentsSectionProps {
 
 export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
   const surface = useSurface();
-  const componentEntries = entries.filter((entry) => entry.section === 'components');
 
   return (
     <SectionBlock
@@ -33,7 +32,7 @@ export function ComponentsSection({ onOpenDetail }: ComponentsSectionProps) {
       lead="Every piece of the library, grouped the way it ships."
     >
       {CATEGORY_ORDER.map((category) => {
-        const categoryEntries = componentEntries.filter((entry) => entry.category === category);
+        const categoryEntries = entries.filter((entry) => entry.category === category);
         if (categoryEntries.length === 0) return null;
 
         return (

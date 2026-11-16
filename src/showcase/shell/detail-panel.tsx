@@ -27,6 +27,8 @@ function generateCode(
 
     if (typeof value === 'boolean') {
       if (value) propLines.push(`  ${prop.name}`);
+    } else if (prop.type === 'number' && !Number.isNaN(Number(value))) {
+      propLines.push(`  ${prop.name}={${value}}`);
     } else {
       propLines.push(`  ${prop.name}="${value}"`);
     }
