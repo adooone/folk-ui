@@ -5,8 +5,9 @@ import { DocsSection } from '../entries/docs-section';
 import { TokensSection } from '../entries/tokens-section';
 import { WelcomeSection } from '../entries/welcome-section';
 import { entries } from '../lib/entries';
+import type { Appearance } from './appearance';
+import { applyAppearance, defaultAppearance } from './appearance';
 import { Desk } from './desk';
-import { fonts } from './fonts';
 import { LeftColumn } from './left-column';
 import type { SectionId } from './sections';
 import { sections } from './sections';
@@ -24,7 +25,7 @@ export function Shell() {
     return isSectionId(hash) ? hash : 'welcome';
   });
   const [surface, setSurface] = useState<Surface>('paper');
-  const [fontIndex, setFontIndex] = useState(0);
+  const [appearance, setAppearance] = useState<Appearance>(defaultAppearance);
   const [scrollRoot, setScrollRoot] = useState<HTMLElement | null>(null);
   const [openDetailId, setOpenDetailId] = useState<string | null>(null);
   const [supportsScrollTimeline] = useState(
@@ -33,11 +34,9 @@ export function Shell() {
   const sheetRef = useRef<HTMLDivElement>(null);
   const openEntry = entries.find((entry) => entry.id === openDetailId) ?? null;
 
-  const font = fonts[fontIndex];
-
   useEffect(() => {
-    document.documentElement.style.setProperty('--paper-button-font', font.family);
-  }, [font.family]);
+    applyAppearance(appearance);
+  }, [appearance]);
 
   useEffect(() => {
     setScrollRoot(sheetRef.current);
@@ -123,8 +122,8 @@ export function Shell() {
         onNavigate={scrollTo}
         surface={surface}
         onCycleSurface={() => setSurface((s) => (s === 'paper' ? 'chalkboard' : 'paper'))}
-        font={font.key}
-        onCycleFont={() => setFontIndex((i) => (i + 1) % fonts.length)}
+        appearance={appearance}
+        onChangeAppearance={setAppearance}
         version={packageJson.version}
         openEntry={openEntry}
         onCloseDetail={() => setOpenDetailId(null)}

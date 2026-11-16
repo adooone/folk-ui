@@ -7,8 +7,9 @@ import { Text } from '../../components/text';
 import { colors } from '../../tokens';
 import { cn } from '../../utils/style-helpers';
 import type { EntryDef } from '../lib/entries';
+import type { Appearance } from './appearance';
+import { faceKeys, nextItem, textScales } from './appearance';
 import { DetailPanel } from './detail-panel';
-import type { FontKey } from './fonts';
 import styles from './left-column.module.scss';
 import type { SectionId } from './sections';
 import { sections } from './sections';
@@ -20,8 +21,8 @@ interface LeftColumnProps {
   onNavigate: (id: SectionId) => void;
   surface: Surface;
   onCycleSurface: () => void;
-  font: FontKey;
-  onCycleFont: () => void;
+  appearance: Appearance;
+  onChangeAppearance: (appearance: Appearance) => void;
   version: string;
   openEntry: EntryDef | null;
   onCloseDetail: () => void;
@@ -61,14 +62,14 @@ function NavList({
 function BottomBlock({
   surface,
   onCycleSurface,
-  font,
-  onCycleFont,
+  appearance,
+  onChangeAppearance,
   version,
 }: {
   surface: Surface;
   onCycleSurface: () => void;
-  font: FontKey;
-  onCycleFont: () => void;
+  appearance: Appearance;
+  onChangeAppearance: (appearance: Appearance) => void;
   version: string;
 }) {
   return (
@@ -86,11 +87,33 @@ function BottomBlock({
       </button>
       <button
         type="button"
-        onClick={onCycleFont}
+        onClick={() =>
+          onChangeAppearance({ ...appearance, body: nextItem(faceKeys, appearance.body) })
+        }
         className="self-start font-mono text-sm font-semibold lowercase tracking-wide"
         style={{ color: colors.sketchInk }}
       >
-        font: {font}
+        body face: {appearance.body}
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          onChangeAppearance({ ...appearance, title: nextItem(faceKeys, appearance.title) })
+        }
+        className="self-start font-mono text-sm font-semibold lowercase tracking-wide"
+        style={{ color: colors.sketchInk }}
+      >
+        title face: {appearance.title}
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          onChangeAppearance({ ...appearance, scale: nextItem(textScales, appearance.scale) })
+        }
+        className="self-start font-mono text-sm font-semibold lowercase tracking-wide"
+        style={{ color: colors.sketchInk }}
+      >
+        text scale: {`${appearance.scale}%`}
       </button>
       <Text tone="faint" face="mono" size="xs" as="p">
         v{version}
@@ -104,8 +127,8 @@ export function LeftColumn({
   onNavigate,
   surface,
   onCycleSurface,
-  font,
-  onCycleFont,
+  appearance,
+  onChangeAppearance,
   version,
   openEntry,
   onCloseDetail,
@@ -159,8 +182,8 @@ export function LeftColumn({
           <BottomBlock
             surface={surface}
             onCycleSurface={onCycleSurface}
-            font={font}
-            onCycleFont={onCycleFont}
+            appearance={appearance}
+            onChangeAppearance={onChangeAppearance}
             version={version}
           />
         </div>
@@ -202,8 +225,8 @@ export function LeftColumn({
           <BottomBlock
             surface={surface}
             onCycleSurface={onCycleSurface}
-            font={font}
-            onCycleFont={onCycleFont}
+            appearance={appearance}
+            onChangeAppearance={onChangeAppearance}
             version={version}
           />
         </div>
