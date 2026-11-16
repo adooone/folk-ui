@@ -120,11 +120,16 @@ $color-input-focus-shadow: rgba(143, 185, 150, 0.15);
 $color-overlay-light: rgba(255, 255, 255, 0.1);
 $color-overlay-light-border: rgba(255, 255, 255, 0.15);
 
-$font-family-serif: 'Cormorant Garamond', 'Georgia', serif;
+$fallback-serif: 'Cormorant Garamond', 'Georgia', serif;
+$fallback-title: 'Luminari', 'Cormorant Garamond', 'Georgia', serif;
+$fallback-hand: 'Caveat', cursive;
+$fallback-mono: 'JetBrains Mono', monospace;
+
+$font-family-serif: var(--paper-font-default, #{$fallback-serif});
 $font-family-sans: 'Inter', system-ui, sans-serif;
-$font-family-display: 'Luminari', 'Cormorant Garamond', 'Georgia', serif;
-$font-family-handwritten: 'Caveat', cursive;
-$font-family-mono: 'JetBrains Mono', monospace;
+$font-family-display: var(--paper-font-title, #{$fallback-title});
+$font-family-handwritten: var(--paper-font-hand, #{$fallback-hand});
+$font-family-mono: var(--paper-font-mono, #{$fallback-mono});
 
 // Type scale — base = 1rem = 16px
 $font-size-3xs: 0.625rem; // 10px

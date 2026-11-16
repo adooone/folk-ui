@@ -38,7 +38,7 @@
   min-width: 0;
   position: relative;
   z-index: 1;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   line-height: $line-height-tight;
   white-space: nowrap;

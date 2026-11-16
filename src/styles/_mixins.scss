@@ -2,7 +2,7 @@
 @use 'tokens' as *;
 
 @mixin serif-text($size: 1rem, $weight: 400) {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: $font-family-serif;
   font-size: $size;
   font-weight: $weight;
   line-height: 1.5;

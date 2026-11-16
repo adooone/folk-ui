@@ -9,7 +9,7 @@
 }
 
 .label {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
@@ -37,7 +37,7 @@
   justify-content: space-between;
   width: 100%;
   text-align: left;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-weight: $font-weight-medium;
   line-height: $line-height-tight;
   color: $color-text-primary;
@@ -165,7 +165,7 @@
 
 .option {
   padding: $space-2 $space-3;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   color: $color-text-primary;
   cursor: pointer;

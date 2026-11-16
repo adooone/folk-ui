@@ -65,7 +65,7 @@
   padding: $space-2 $space-3;
   border: none;
   background: transparent;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   text-align: left;
   color: $color-text-primary;

@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
   user-select: none;

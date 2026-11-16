@@ -39,7 +39,7 @@
 }
 
 .headerTitle {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-lg;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
@@ -49,7 +49,7 @@
 }
 
 .headerSubtitle {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   font-weight: $font-weight-normal;
   color: $color-text-tertiary;
@@ -125,7 +125,7 @@
 }
 
 .logoText {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: 1.25rem;
   font-weight: $font-weight-bold;
   color: $color-text-primary;
@@ -190,7 +190,7 @@
 }
 
 .footerText {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   color: $color-text-tertiary;
   margin: 0;
 }

@@ -32,7 +32,7 @@
   background-color: rgba(200, 220, 195, 0.12);
   color: $color-chalkboard-muted;
   border-color: $color-chalkboard-border;
-  font-family: 'Courier Prime', monospace;
+  font-family: $font-family-mono;
   letter-spacing: 0.02em;
 
   &:hover {

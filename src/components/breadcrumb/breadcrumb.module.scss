@@ -2,7 +2,7 @@
 @use '../../styles/mixins' as *;
 
 .breadcrumb {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-sm;
 }
 

@@ -8,7 +8,7 @@
 }
 
 .label {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
@@ -49,7 +49,7 @@
   outline: none;
   background: transparent;
   color: $color-text-primary;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-weight: $font-weight-medium;
   line-height: $line-height-tight;
 

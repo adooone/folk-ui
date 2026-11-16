@@ -192,6 +192,10 @@ export const canvas = {
 } as const;
 
 export const fontFamily = {
+  body: ['var(--paper-font-default)', 'Cormorant Garamond', 'Georgia', 'serif'],
+  title: ['var(--paper-font-title)', 'Luminari', 'Cormorant Garamond', 'Georgia', 'serif'],
+  hand: ['var(--paper-font-hand)', 'Caveat', 'cursive'],
+  code: ['var(--paper-font-mono)', 'JetBrains Mono', 'monospace'],
   display: ['Luminari', 'Cormorant Garamond', 'Georgia', 'serif'],
   'display-alt': ['Cinzel Decorative', 'Cormorant Garamond', 'Georgia', 'serif'],
   'display-fantasy': ['Almendra Display', 'Cormorant Garamond', 'Georgia', 'serif'],

@@ -216,6 +216,22 @@ Floating pill-style navigation bar with paper texture background.
 | **Handwritten** | Caveat | Tags, annotations, special labels |
 | **Mono** | JetBrains Mono | Code, data, timestamps |
 
+Every component reads its face from four CSS variables, each falling back to the family above, so setting none changes nothing:
+
+| Variable | Fallback | Role |
+|----------|----------|------|
+| `--paper-font-default` | Cormorant Garamond | Body |
+| `--paper-font-title` | Luminari | Headings, app name, empty-state titles |
+| `--paper-font-hand` | Caveat | Handwritten accents, stamps |
+| `--paper-font-mono` | JetBrains Mono | Code |
+
+```css
+:root {
+  --paper-font-default: 'Kyiv Serif', serif;
+  --paper-font-title: 'Kyiv Sans', sans-serif;
+}
+```
+
 ### Textures
 
 Available as Tailwind utilities:

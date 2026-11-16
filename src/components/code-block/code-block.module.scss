@@ -51,7 +51,7 @@
   background-color: $color-chalkboard-bg;
   border-bottom-color: $color-chalkboard-border;
   color: $color-chalkboard-muted-dim;
-  font-family: 'Courier Prime', monospace;
+  font-family: $font-family-mono;
   font-size: $font-size-sm;
   letter-spacing: 0.04em;
 }
@@ -59,7 +59,7 @@
 .chalkboardPre {
   background-color: $color-chalkboard-bg;
   color: $color-chalkboard-chalk;
-  font-family: 'Courier Prime', monospace;
+  font-family: $font-family-mono;
   font-size: $font-size-base;
   line-height: $line-height-relaxed;
   padding: 1.25rem 1.5rem;

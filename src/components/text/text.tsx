@@ -12,7 +12,7 @@ function key(prefix: string, value: string) {
 }
 
 export type TextTone = 'primary' | 'secondary' | 'muted' | 'faint';
-export type TextFace = 'serif' | 'sans' | 'handwritten' | 'mono' | 'display';
+export type TextFace = 'serif' | 'sans' | 'handwritten' | 'mono' | 'display' | 'title';
 export type TextSize = '3xs' | '2xs' | 'xs' | 'sm' | 'base' | 'md' | 'lg';
 export type TextWeight = 'normal' | 'medium' | 'semibold' | 'bold';
 

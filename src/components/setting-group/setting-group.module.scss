@@ -28,7 +28,7 @@
 
 .description {
   margin: 0;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-xs;
   color: $color-text-secondary;
   line-height: $line-height-snug;

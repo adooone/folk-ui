@@ -40,7 +40,7 @@ changes every component's face, and `grep -r "font-family:" src` finds no
 family name outside the four fallbacks.
 
 ### Phases
-- [ ] Every face comes from a variable
+- [x] Every face comes from a variable
       Replace each hardcoded family in `src/components/**/*.module.scss` and `globals.scss` with the matching variable and fallback; add `face="title"` to `Text`; `PageTitle`, `SectionHeading`, `EmptyState` and `Stamp` read the variables; `tokens.ts` `fontFamily` documents them. Build, check-types, lint.
 - [ ] The showcase switches faces
       An Appearance switcher in the showcase that sets the four variables and the root size, with Cormorant, Kyiv Sans and Kyiv Serif as demo faces; the README theming section lists the variables.

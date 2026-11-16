@@ -57,7 +57,7 @@
   background-color: $color-chalkboard-bg;
   border-color: $color-chalkboard-border;
   color: $color-chalkboard-chalk;
-  font-family: 'Courier Prime', monospace;
+  font-family: $font-family-mono;
 
   .command {
     background-color: transparent;

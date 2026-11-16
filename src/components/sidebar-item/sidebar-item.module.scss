@@ -21,7 +21,7 @@
   background: transparent;
   border: none;
   text-align: left;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   border-radius: $radius-sm;
   outline: none;
 }

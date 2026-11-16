@@ -10,7 +10,7 @@
   z-index: $z-tooltip;
   max-width: 240px;
   padding: $space-2 $space-3;
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   font-size: $font-size-sm;
   line-height: $line-height-snug;
   color: $color-text-primary;

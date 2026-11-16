@@ -16,7 +16,7 @@
 }
 
 .desc {
-  font-family: var(--paper-font-default, $font-family-serif);
+  font-family: $font-family-serif;
   color: $color-text-secondary;
   font-size: $font-size-base;
   line-height: $line-height-normal;
