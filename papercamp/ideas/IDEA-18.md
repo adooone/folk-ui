@@ -51,5 +51,6 @@ variable defaults.
 ### Phases
 - [x] Chalkboard colours become custom properties
       Declare the `--pui-chalk-*` variables with the green defaults in `globals.scss`; rewrite every chalkboard rule in the component styles, `_surface.scss` and the texture tint to read them; `tokens.ts` keeps the green constants; build and check the CSS for stray greens.
+      run: 3m46s · 46 in · 9.2k out · sonnet-5-5 · sess:e69a2277-30bf-4aaa-8822-70c63b3eb974
 - [ ] The grey board
       `[data-chalk="grey"]` overrides with the palette above; `chalkGrey` in `tokens.ts`; the showcase page with both boards; README theming note.
