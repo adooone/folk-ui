@@ -45,6 +45,7 @@ family name outside the four fallbacks.
       run: 1m15s · 22 in · 5.1k out · sonnet-5-5 · sess:6823e55e-22f9-4df4-9d3b-4ccf5f3f32e4
 - [x] The showcase switches faces
       An Appearance switcher in the showcase that sets the four variables and the root size, with Cormorant, Kyiv Sans and Kyiv Serif as demo faces; the README theming section lists the variables.
+      run: 37s · 34 in · 8.7k out · sonnet-5-5 · sess:6823e55e-22f9-4df4-9d3b-4ccf5f3f32e4
 
 ### Thread
 - [x] 2026-11-16 [log] [agent] Kept on 2026-11-16 while IDEA-16 and IDEA-17 were retired: paper-camp's second client (paper-camp IDEA-337) uses folk-ui for containers and controls and needs them to take the body face from a variable.
