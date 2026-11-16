@@ -1,12 +1,11 @@
-export { Row } from './row';
 export type {
-  RowProps,
-  RowColumns,
-  RowColumnConfig,
-  RowColumnValue,
   RowBreakpoint,
+  RowColumnConfig,
+  RowColumns,
+  RowColumnValue,
+  RowProps,
   RowSurface,
 } from './row';
-
-export { RowSkeleton } from './row-skeleton';
+export { Row } from './row';
 export type { RowSkeletonProps, RowSkeletonWidths } from './row-skeleton';
+export { RowSkeleton } from './row-skeleton';

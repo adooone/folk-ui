@@ -1,5 +1,5 @@
-import { forwardRef, useCallback, useId, useRef } from 'react';
 import type { PointerEvent as ReactPointerEvent, TextareaHTMLAttributes } from 'react';
+import { forwardRef, useCallback, useId, useRef } from 'react';
 import { cn } from '../../utils/style-helpers';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './textarea.module.scss';

@@ -2,8 +2,8 @@ import type { CSSProperties } from 'react';
 import { cn } from '../../utils/style-helpers';
 import { Skeleton } from '../skeleton';
 import { SketchBorder, sketchOutline } from '../sketch-border';
-import { resolveRowColumns, resolveRowSurface, rowHideBelowClass } from './row';
 import type { RowColumns, RowSurface } from './row';
+import { resolveRowColumns, resolveRowSurface, rowHideBelowClass } from './row';
 import styles from './row.module.scss';
 
 export interface RowSkeletonWidths {

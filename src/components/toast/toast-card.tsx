@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { CloseIcon } from '../../utils/icons';
 import { cn } from '../../utils/style-helpers';
 import { resolveTexture } from '../../utils/textures';
 import { AlertIcon } from '../alert/alert-icon';
 import { SketchBorder, sketchOutline } from '../sketch-border';
-import type { ToastVariant } from './toast-context';
 import styles from './toast.module.scss';
+import type { ToastVariant } from './toast-context';
 
 export interface ToastRecord {
   id: string;

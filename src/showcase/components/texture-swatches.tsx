@@ -1,16 +1,16 @@
-import { useCallback } from 'react';
 import type { FC } from 'react';
+import { useCallback } from 'react';
 import { CopyButton } from '../../components/copy-button';
 import { Swatch } from '../../components/swatch';
 import {
-  type PaperTextureKey,
-  type RuledColorKey,
-  type RuledType,
-  type TextureConfig,
   buildTextureStyles,
   getRuledColorByKey,
   getTextureByKey,
+  type PaperTextureKey,
+  type RuledColorKey,
+  type RuledType,
   ruledColors,
+  type TextureConfig,
   textures,
 } from '../lib/textures';
 

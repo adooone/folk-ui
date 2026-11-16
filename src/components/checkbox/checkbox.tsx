@@ -1,5 +1,5 @@
-import { forwardRef, useEffect, useId, useRef } from 'react';
 import type { InputHTMLAttributes } from 'react';
+import { forwardRef, useEffect, useId, useRef } from 'react';
 import { useBlobPaths } from '../../hooks/use-blob-paths';
 import { cn } from '../../utils/style-helpers';
 import { SketchBorder, sketchOutline } from '../sketch-border';

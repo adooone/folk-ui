@@ -1,2 +1,2 @@
-export { Page } from './page';
 export type { PageProps } from './page';
+export { Page } from './page';

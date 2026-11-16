@@ -1,3 +1,9 @@
+import type {
+  MouseEvent,
+  ReactElement,
+  KeyboardEvent as ReactKeyboardEvent,
+  ReactNode,
+} from 'react';
 import {
   cloneElement,
   useCallback,
@@ -6,12 +12,6 @@ import {
   useLayoutEffect,
   useRef,
   useState,
-} from 'react';
-import type {
-  MouseEvent,
-  ReactElement,
-  KeyboardEvent as ReactKeyboardEvent,
-  ReactNode,
 } from 'react';
 import { createPortal } from 'react-dom';
 import { useEscapeKey } from '../../hooks/use-escape-key';
@@ -196,7 +196,6 @@ export function Menu({ trigger, items, align = 'start', surface = 'paper', class
             <div className={styles.list}>
               {items.map((entry) =>
                 isSeparator(entry) ? (
-                  // biome-ignore lint/a11y/useFocusableInteractive: a static visual divider between menu items, not an adjustable splitter, so it is intentionally not focusable.
                   <div key={entry.id} role="separator" className={styles.separator} />
                 ) : (
                   <button

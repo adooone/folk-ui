@@ -3,10 +3,10 @@ import { useRectBlobPaths } from '../../hooks/use-rect-blob-paths';
 import { surface as cardSurfaces } from '../../tokens';
 import { cn } from '../../utils/style-helpers';
 import {
+  getSurfaceStyles,
   type SurfaceConfig,
   type SurfaceFillKey,
   type TextureProp,
-  getSurfaceStyles,
 } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './row.module.scss';

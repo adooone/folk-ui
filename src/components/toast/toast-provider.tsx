@@ -1,12 +1,12 @@
-import { useCallback, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { cn } from '../../utils/style-helpers';
-import { ToastCard } from './toast-card';
-import type { ToastRecord } from './toast-card';
-import { ToastContext } from './toast-context';
-import type { ToastOptions } from './toast-context';
 import styles from './toast.module.scss';
+import type { ToastRecord } from './toast-card';
+import { ToastCard } from './toast-card';
+import type { ToastOptions } from './toast-context';
+import { ToastContext } from './toast-context';
 
 export type ToastPosition =
   | 'top-left'

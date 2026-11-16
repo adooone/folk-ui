@@ -1,8 +1,8 @@
-export { Text } from './text';
 export type {
-  TextProps,
-  TextTone,
   TextFace,
+  TextProps,
   TextSize,
+  TextTone,
   TextWeight,
 } from './text';
+export { Text } from './text';

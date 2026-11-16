@@ -1,2 +1,2 @@
+export type { OverflowToolbarItem, OverflowToolbarProps } from './overflow-toolbar';
 export { OverflowToolbar } from './overflow-toolbar';
-export type { OverflowToolbarProps, OverflowToolbarItem } from './overflow-toolbar';

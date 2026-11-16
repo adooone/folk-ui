@@ -1,7 +1,7 @@
-export { Layout } from './layout';
 export type {
+  HeaderBackground,
+  LayoutBackground,
   LayoutProps,
   NavigationItem,
-  LayoutBackground,
-  HeaderBackground,
 } from './layout';
+export { Layout } from './layout';

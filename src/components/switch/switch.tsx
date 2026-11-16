@@ -1,5 +1,5 @@
-import { forwardRef, useId } from 'react';
 import type { InputHTMLAttributes } from 'react';
+import { forwardRef, useId } from 'react';
 import { cn } from '../../utils/style-helpers';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './switch.module.scss';

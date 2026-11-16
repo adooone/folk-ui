@@ -4,10 +4,10 @@ import { createAccentClassMap } from '../../utils/accent-class-map';
 import { ChevronRightIcon } from '../../utils/icons';
 import { cn } from '../../utils/style-helpers';
 import {
-  type PaperTextureKey,
-  type TextureProp,
   getTextureStyles,
+  type PaperTextureKey,
   resolveTexture,
+  type TextureProp,
 } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './table.module.scss';

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import type { CSSProperties, KeyboardEvent, MouseEvent, ReactNode } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { cn } from '../../utils/style-helpers';
-import { type TextureProp, resolveTexture } from '../../utils/textures';
+import { resolveTexture, type TextureProp } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './select.module.scss';
 

@@ -1,2 +1,2 @@
+export type { PropDef, PropTableProps } from './prop-table';
 export { PropTable } from './prop-table';
-export type { PropTableProps, PropDef } from './prop-table';

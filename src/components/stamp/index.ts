@@ -1,2 +1,2 @@
-export { Stamp } from './stamp';
 export type { StampProps, StampVariant } from './stamp';
+export { Stamp } from './stamp';

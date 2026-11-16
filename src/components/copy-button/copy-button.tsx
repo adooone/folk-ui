@@ -1,5 +1,5 @@
-import { useCallback, useState } from 'react';
 import type { ButtonHTMLAttributes } from 'react';
+import { useCallback, useState } from 'react';
 import { cn } from '../../utils/style-helpers';
 import styles from './copy-button.module.scss';
 

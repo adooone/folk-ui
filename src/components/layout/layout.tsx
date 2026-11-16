@@ -1,10 +1,10 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { useState } from 'react';
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { layoutConfig } from '../../layout';
 import { space } from '../../tokens';
 import { buttonSizeCompact } from '../../utils/style-helpers';
-import { type Texture, getTextureStyles } from '../../utils/textures';
+import { getTextureStyles, type Texture } from '../../utils/textures';
 import { Button } from '../button';
 import { Drawer } from '../drawer';
 import { Page } from '../page';

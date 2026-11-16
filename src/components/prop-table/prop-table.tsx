@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { getDefaultValue } from '../../utils/prop-helpers';
 import { cn } from '../../utils/style-helpers';
-import { Table, TableCellDropdown, TableCellInput, TableCellToggle } from '../table';
 import type { TableColumn } from '../table';
+import { Table, TableCellDropdown, TableCellInput, TableCellToggle } from '../table';
 import styles from './prop-table.module.scss';
 
 export interface PropDef {

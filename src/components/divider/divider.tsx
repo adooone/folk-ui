@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { cn } from '../../utils/style-helpers';
-import { DividerSketch } from './divider-sketch';
 import styles from './divider.module.scss';
+import { DividerSketch } from './divider-sketch';
 
 export interface DividerProps {
   orientation?: 'horizontal' | 'vertical';
@@ -31,7 +31,6 @@ export function Divider({
       return <DividerSketch orientation="vertical" className={cn(chalk, className)} />;
     }
     return (
-      // biome-ignore lint/a11y/useFocusableInteractive: a static decorative separator, not an adjustable splitter, so it is intentionally not focusable.
       <span
         className={cn(styles.vertical, chalk, className)}
         role="separator"
@@ -45,7 +44,6 @@ export function Divider({
   }
 
   return (
-    // biome-ignore lint/a11y/useFocusableInteractive: a static decorative separator, not an adjustable splitter, so it is intentionally not focusable.
     <div className={cn(styles.horizontal, chalk, className)} role="separator">
       <span className={styles.line} />
       {label != null && (

@@ -1,7 +1,7 @@
 import type { KeyboardEvent, MouseEvent, ReactNode } from 'react';
 import { createAccentClassMap } from '../../utils/accent-class-map';
 import { cn } from '../../utils/style-helpers';
-import { type SurfaceFillKey, type TextureProp, getSurfaceStyles } from '../../utils/textures';
+import { getSurfaceStyles, type SurfaceFillKey, type TextureProp } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './card.module.scss';
 

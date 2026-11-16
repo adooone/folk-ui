@@ -1,5 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useStableSeed } from '../../hooks/use-stable-seed';
 import { roughGenerator } from '../../utils/rough';
 import { cn } from '../../utils/style-helpers';
@@ -104,7 +104,6 @@ export function DividerSketch({
 
   if (orientation === 'vertical') {
     return (
-      // biome-ignore lint/a11y/useFocusableInteractive: a static decorative separator, not an adjustable splitter, so it is intentionally not focusable.
       <div
         ref={hostRef}
         className={cn(styles.sketchVertical, className)}
@@ -128,7 +127,6 @@ export function DividerSketch({
 
   if (labelled) {
     return (
-      // biome-ignore lint/a11y/useFocusableInteractive: a static decorative separator, not an adjustable splitter, so it is intentionally not focusable.
       <div ref={hostRef} className={cn(styles.sketchLabelled, className)} role="separator">
         <svg
           className={styles.sketchSvg}
@@ -152,7 +150,6 @@ export function DividerSketch({
   }
 
   return (
-    // biome-ignore lint/a11y/useFocusableInteractive: a static decorative separator, not an adjustable splitter, so it is intentionally not focusable.
     <div ref={hostRef} className={cn(styles.horizontal, styles.sketch, className)} role="separator">
       {horizontalPath && main != null && (
         <svg

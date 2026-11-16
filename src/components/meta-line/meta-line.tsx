@@ -1,6 +1,6 @@
 import type { CSSProperties, ElementType } from 'react';
-import { Text } from '../text';
 import type { TextProps } from '../text';
+import { Text } from '../text';
 
 export interface MetaLineProps {
   children?: TextProps['children'];

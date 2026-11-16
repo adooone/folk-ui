@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { CloseIcon } from '../../utils/icons';
 import { cn } from '../../utils/style-helpers';
-import { type TextureProp, resolveTexture } from '../../utils/textures';
+import { resolveTexture, type TextureProp } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
-import { AlertIcon } from './alert-icon';
 import styles from './alert.module.scss';
+import { AlertIcon } from './alert-icon';
 
 export interface AlertProps {
   children: ReactNode;

@@ -1,12 +1,12 @@
-import { useId, useRef } from 'react';
 import type { ReactNode } from 'react';
+import { useId, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { useBodyScrollLock } from '../../hooks/use-body-scroll-lock';
 import { useEscapeKey } from '../../hooks/use-escape-key';
 import { useFocusTrap } from '../../hooks/use-focus-trap';
 import { CloseIcon } from '../../utils/icons';
 import { cn } from '../../utils/style-helpers';
-import { type TextureProp, resolveTexture } from '../../utils/textures';
+import { resolveTexture, type TextureProp } from '../../utils/textures';
 import styles from './modal.module.scss';
 
 export interface ModalProps {

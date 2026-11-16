@@ -5,16 +5,21 @@ import { Stamp } from './stamp';
 
 afterEach(cleanup);
 
+function lineHeightRatio(element: HTMLElement) {
+  const { lineHeight, fontSize } = getComputedStyle(element);
+  return Number.parseFloat(lineHeight) / Number.parseFloat(fontSize);
+}
+
 describe('Stamp line-height', () => {
   it('sets the static stamp line-height to 1.2', () => {
     const { container } = render(<Stamp>Label</Stamp>);
     const stamp = container.firstElementChild as HTMLElement;
-    expect(getComputedStyle(stamp).lineHeight).toBe('1.2');
+    expect(lineHeightRatio(stamp)).toBeCloseTo(1.2);
   });
 
   it('keeps the same line-height on a pressable stamp', () => {
     const { container } = render(<Stamp onClick={() => {}}>Label</Stamp>);
     const stamp = container.firstElementChild as HTMLElement;
-    expect(getComputedStyle(stamp).lineHeight).toBe('1.2');
+    expect(lineHeightRatio(stamp)).toBeCloseTo(1.2);
   });
 });

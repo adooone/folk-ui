@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { createAccentClassMap } from '../../utils/accent-class-map';
 import { cn } from '../../utils/style-helpers';
-import { type TextureProp, resolveTexture } from '../../utils/textures';
+import { resolveTexture, type TextureProp } from '../../utils/textures';
 import { SketchBorder, sketchOutline } from '../sketch-border';
 import styles from './page.module.scss';
 

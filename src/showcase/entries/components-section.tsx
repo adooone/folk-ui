@@ -1,8 +1,7 @@
 import { Stamp } from '../../components/stamp';
 import type { Category } from '../lib/entries';
 import { entries } from '../lib/entries';
-import { useSurface } from '../shell/surface-context';
-import { PaperDemoProvider } from '../shell/surface-context';
+import { PaperDemoProvider, useSurface } from '../shell/surface-context';
 import { CategoryHeading } from './category-heading';
 import { SectionBlock } from './section-block';
 

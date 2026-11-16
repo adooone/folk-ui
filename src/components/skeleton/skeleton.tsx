@@ -1,5 +1,5 @@
-import { useMemo } from 'react';
 import type { CSSProperties } from 'react';
+import { useMemo } from 'react';
 import { useStableSeed } from '../../hooks/use-stable-seed';
 import { colors, withAlpha } from '../../tokens';
 import { roughGenerator } from '../../utils/rough';

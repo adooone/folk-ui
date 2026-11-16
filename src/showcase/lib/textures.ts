@@ -2,8 +2,8 @@ import {
   type PaperTextureKey,
   type RuledColorKey,
   type RuledType,
-  type TextureConfig,
   ruledColorMap,
+  type TextureConfig,
   textureColorMap,
   textureMap,
 } from '../../utils/textures';
