@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import packageJson from '../../../package.json';
+import { BoardsSection } from '../entries/boards-section';
 import { ComponentsSection } from '../entries/components-section';
 import { DocsSection } from '../entries/docs-section';
 import { TokensSection } from '../entries/tokens-section';
@@ -143,6 +144,9 @@ export function Shell() {
             }
             if (id === 'components') {
               return <ComponentsSection key={id} onOpenDetail={setOpenDetailId} />;
+            }
+            if (id === 'boards') {
+              return <BoardsSection key={id} />;
             }
             if (id === 'tokens') {
               return <TokensSection key={id} />;

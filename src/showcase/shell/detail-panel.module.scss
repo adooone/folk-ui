@@ -14,7 +14,7 @@
   box-shadow: $shadow-paper-lg;
   background-color: $color-chalkboard-surface;
   background-image:
-    url($chalkboard-texture-data-uri),
+    $chalkboard-texture,
     linear-gradient(135deg, $color-chalkboard-light 0%, $color-chalkboard-surface 60%);
   background-repeat: repeat, no-repeat;
   background-size: 200px 200px, auto;

@@ -24,7 +24,7 @@ export const Sheet = forwardRef<HTMLDivElement, SheetProps>(function Sheet(
       className="relative min-w-0 flex-1 overflow-y-auto overflow-x-hidden"
       style={{
         ...getSurfaceStyles(isChalkboard ? 'chalkboard' : 'white'),
-        color: isChalkboard ? colors.chalkboardText : colors.textPrimary,
+        color: isChalkboard ? 'var(--pui-chalk-text)' : colors.textPrimary,
         boxShadow: shadows['ink-md'],
       }}
     >

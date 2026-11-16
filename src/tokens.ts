@@ -116,6 +116,27 @@ export const colors = {
   sketchStrokeMuted: 'rgba(61, 53, 43, 0.15)',
 } as const;
 
+export const chalkGrey = {
+  chalkboardBg: '#232426',
+  chalkboardSurface: '#2b2c2f',
+  chalkboardLight: '#353639',
+  chalkboardText: '#e8e4d9',
+  chalkboardChalk: '#dedad0',
+  chalkboardMuted: '#a6a69f',
+  chalkboardMutedDim: '#6e6e68',
+  chalkboardAccent: '#b9c4ae',
+  chalkboardRose: '#e8a0a0',
+  chalkboardBorderBase: '#d0d0ca',
+  chalkboardToggleActive: '#4a4c50',
+
+  chalkboardPassFill: '#2f4a3a',
+  chalkboardFailFill: '#523333',
+  chalkboardRunningFill: '#4f4530',
+  chalkboardPassText: colors.chalkboardPassText,
+  chalkboardFailText: colors.chalkboardFailText,
+  chalkboardRunningText: colors.chalkboardRunningText,
+} as const;
+
 export const color = {
   textPrimary: colors.textPrimary,
   textSecondary: colors.textSecondary,

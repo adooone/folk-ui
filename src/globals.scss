@@ -30,6 +30,25 @@
   --pui-chalk-pass-text: #{chalkfill.$color-chalk-pass-text};
   --pui-chalk-fail-text: #{chalkfill.$color-chalk-fail-text};
   --pui-chalk-running-text: #{chalkfill.$color-chalk-running-text};
+  --pui-chalk-texture: url($chalkboard-texture-data-uri);
+}
+
+[data-chalk='grey'] {
+  --pui-chalk-bg: #232426;
+  --pui-chalk-surface: #2b2c2f;
+  --pui-chalk-light: #353639;
+  --pui-chalk-text: #e8e4d9;
+  --pui-chalk-chalk: #dedad0;
+  --pui-chalk-muted: #a6a69f;
+  --pui-chalk-muted-dim: #6e6e68;
+  --pui-chalk-accent: #b9c4ae;
+  --pui-chalk-rose: #e8a0a0;
+  --pui-chalk-border-base: 208, 208, 202;
+  --pui-chalk-toggle-active: #4a4c50;
+  --pui-chalk-pass-fill: #2f4a3a;
+  --pui-chalk-fail-fill: #523333;
+  --pui-chalk-running-fill: #4f4530;
+  --pui-chalk-texture: url($chalkboard-texture-grey-data-uri);
 }
 
 body {

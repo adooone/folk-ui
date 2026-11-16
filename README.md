@@ -232,6 +232,23 @@ Every component reads its face from four CSS variables, each falling back to the
 }
 ```
 
+### Chalkboard
+
+The chalkboard surface reads its colours from `--pui-chalk-*` custom properties declared on `:root` with the green board as the default. Set `data-chalk="grey"` on any ancestor, `<html>` included, to switch every chalkboard component beneath it to the dark grey board, or override the variables yourself for another colour. The grey values are also exported as `chalkGrey`.
+
+```html
+<html data-chalk="grey">
+```
+
+| Variable | Role |
+|----------|------|
+| `--pui-chalk-bg`, `-surface`, `-light` | Board and raised fills |
+| `--pui-chalk-text`, `-chalk`, `-muted`, `-muted-dim`, `-accent`, `-rose` | Inks |
+| `--pui-chalk-border-base` | `r, g, b` triple behind every translucent border and ring |
+| `--pui-chalk-toggle-active` | Switch and toggle fill |
+| `--pui-chalk-{pass,fail,running}-{fill,text}` | Status plates |
+| `--pui-chalk-texture` | The noise grain |
+
 ### Textures
 
 Available as Tailwind utilities:

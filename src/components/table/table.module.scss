@@ -523,12 +523,12 @@ $pencil-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 .chalkboardWrapper {
   .toolbar {
     background-color: $color-chalkboard-surface;
-    background-image: url($chalkboard-texture-data-uri);
+    background-image: $chalkboard-texture;
   }
 
   .panelFooter {
     background-color: $color-chalkboard-surface;
-    background-image: url($chalkboard-texture-data-uri);
+    background-image: $chalkboard-texture;
   }
 
   .searchIcon {
@@ -567,7 +567,7 @@ $pencil-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
     letter-spacing: $letter-spacing-wider;
     color: $color-chalkboard-chalk;
     background-color: $color-chalkboard-surface;
-    background-image: url($chalkboard-texture-data-uri);
+    background-image: $chalkboard-texture;
     border-bottom-color: $color-chalkboard-border;
   }
 
@@ -581,7 +581,7 @@ $pencil-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
   font-family: $font-family-handwritten;
   color: $color-chalkboard-chalk;
   background-color: $color-chalkboard-surface;
-  background-image: url($chalkboard-texture-data-uri);
+  background-image: $chalkboard-texture;
   border-bottom-color: $color-chalkboard-border;
 }
 

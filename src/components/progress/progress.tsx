@@ -37,9 +37,9 @@ export function Progress({
   const seed = Math.max(1, Math.round(useStableSeed() * 1_000_000));
 
   const trackColor = isChalkboard
-    ? withAlpha(colors.chalkboardBorderBase, 0.16)
+    ? 'rgba(var(--pui-chalk-border-base), 0.16)'
     : withAlpha(colors.textPrimary, 0.12);
-  const fillColor = color ?? (isChalkboard ? colors.chalkboardChalk : colors.textSecondary);
+  const fillColor = color ?? (isChalkboard ? 'var(--pui-chalk-chalk)' : colors.textSecondary);
 
   const trackPaths = useMemo(
     () =>

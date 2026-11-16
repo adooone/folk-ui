@@ -34,7 +34,7 @@ export function Skeleton({
   const isChalkboard = surface === 'chalkboard';
   const seed = Math.max(1, Math.round(useStableSeed() * 1_000_000));
   const fillColor = isChalkboard
-    ? withAlpha(colors.chalkboardBorderBase, 0.16)
+    ? 'rgba(var(--pui-chalk-border-base), 0.16)'
     : withAlpha(colors.textPrimary, 0.09);
 
   const paths = useMemo(() => {

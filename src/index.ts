@@ -245,6 +245,6 @@ export type {
   RuledColorKey,
 } from './utils/textures';
 
-export { colors, space, withAlpha } from './tokens';
+export { chalkGrey, colors, space, withAlpha } from './tokens';
 export type { PaperColorToken } from './tokens';
 export { layoutConfig } from './layout';
