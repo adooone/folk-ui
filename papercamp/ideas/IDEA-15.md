@@ -42,6 +42,7 @@ family name outside the four fallbacks.
 ### Phases
 - [x] Every face comes from a variable
       Replace each hardcoded family in `src/components/**/*.module.scss` and `globals.scss` with the matching variable and fallback; add `face="title"` to `Text`; `PageTitle`, `SectionHeading`, `EmptyState` and `Stamp` read the variables; `tokens.ts` `fontFamily` documents them. Build, check-types, lint.
+      run: 1m15s · 22 in · 5.1k out · sonnet-5-5 · sess:6823e55e-22f9-4df4-9d3b-4ccf5f3f32e4
 - [ ] The showcase switches faces
       An Appearance switcher in the showcase that sets the four variables and the root size, with Cormorant, Kyiv Sans and Kyiv Serif as demo faces; the README theming section lists the variables.
 
