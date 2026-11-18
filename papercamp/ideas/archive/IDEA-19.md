@@ -2,9 +2,9 @@
 id: IDEA-19
 title: React 19 peer and a current toolchain
 type: chore
-status: review
+status: done
 created: 2026-11-16
-updated: 2026-11-16
+updated: 2026-11-18
 tags:
   - deps
 ---

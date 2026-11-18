@@ -2,9 +2,9 @@
 id: IDEA-15
 title: Every face comes from a variable
 type: feat
-status: review
+status: done
 created: 2026-11-16
-updated: 2026-11-16
+updated: 2026-11-18
 tags:
   - tokens
   - typography

@@ -2,9 +2,9 @@
 id: IDEA-18
 title: A dark grey chalkboard
 type: feat
-status: review
+status: done
 created: 2026-11-16
-updated: 2026-11-16
+updated: 2026-11-18
 tags:
   - tokens
   - components
