@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.26.0](https://github.com/adooone/folk-ui/compare/v0.25.0...v0.26.0) (2026-11-18)
+
+
+### Features
+
+* **plans:** Chalkboard colours become custom properties ([8f2c473](https://github.com/adooone/folk-ui/commit/8f2c473ac6eb30a2645bbc7c757f07acee8560d7))
+* **plans:** Every face comes from a variable ([40bdbdf](https://github.com/adooone/folk-ui/commit/40bdbdf9aa9916c08a34e6922f2c4b85dee7638e))
+* **plans:** The grey board ([e5bddce](https://github.com/adooone/folk-ui/commit/e5bddceba3653e23e359cb3038c005efbaac36e7))
+* **plans:** The showcase switches faces ([8de0611](https://github.com/adooone/folk-ui/commit/8de06117114cef637ef2a5aa59e6fc5bf372f267))
+* **react:** Accept React 19 alongside 18 ([111fbe2](https://github.com/adooone/folk-ui/commit/111fbe2cfa524c7e4d2a0afb0692427bcf79a004))
+* **showcase:** Appearance switcher for body face, title face and text scale ([47a0e87](https://github.com/adooone/folk-ui/commit/47a0e87986f3f73aff3c8872e769f3a984b90a84))
+* **theming:** A dark grey chalkboard via data-chalk="grey" ([c3a93a1](https://github.com/adooone/folk-ui/commit/c3a93a11a3e7e5e106b9a6a5f421d2170e19db4d))
+* **theming:** Chalkboard colours become --pui-chalk-* custom properties ([68777e5](https://github.com/adooone/folk-ui/commit/68777e5d7330ca090611d2778a51c0181b50a955))
+* **theming:** Every component face reads one of four font variables ([5c19851](https://github.com/adooone/folk-ui/commit/5c19851a1195852e19dc3f449fa65c74942324e8))
+* **toolchain:** Move to Vite 8, Vitest 5, Biome 2 and current libraries ([7c8e8ba](https://github.com/adooone/folk-ui/commit/7c8e8ba8626ab574d1c76d98c9fd1796b093fdd2))
+
+
+### Bug Fixes
+
+* **components:** Focus the menu once measured, name dialogs, cover row/tabs ([1e5650b](https://github.com/adooone/folk-ui/commit/1e5650b8563aa36767915757bf6ee6c1a09ac479))
+* **lint:** Interpolate the chalkboard texture inside its custom properties ([3ea850c](https://github.com/adooone/folk-ui/commit/3ea850cb24c5127cd1910a9da1fb6708300b181d))
+* **showcase:** Emit numeric props as {value}, drop dead section field, stop per-tick Shell re-render ([6453b28](https://github.com/adooone/folk-ui/commit/6453b287561ae8befd2289954eb9eb251b255828))
+
+
+### Documentation
+
+* **ideas:** Every face comes from a variable — plan ([e4bfbfe](https://github.com/adooone/folk-ui/commit/e4bfbfe3e3fe47f942db6afe51e2dafbe5172fe5))
+
 ## [0.25.0](https://github.com/adooone/folk-ui/compare/v0.24.0...v0.25.0) (2026-10-16)
 
 
