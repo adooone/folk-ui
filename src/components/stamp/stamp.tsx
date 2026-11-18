@@ -172,7 +172,7 @@ const chalkboardFill: Record<StampVariant, { fill: string; text: string; ring: s
   faint: {
     fill: 'var(--pui-chalk-running-fill)',
     text: 'var(--pui-chalk-running-text)',
-    ring: withAlpha(color.chalkRunning, 0.3),
+    ring: 'color-mix(in srgb, var(--pui-chalk-running-fill) 30%, transparent)',
   },
 };
 

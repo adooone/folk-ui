@@ -13,6 +13,7 @@ export interface ModalProps {
   open: boolean;
   onClose: () => void;
   title?: string;
+  ariaLabel?: string;
   children: ReactNode;
   size?: 'small' | 'medium' | 'large';
   surface?: 'paper' | 'chalkboard';
@@ -24,6 +25,7 @@ export function Modal({
   open,
   onClose,
   title,
+  ariaLabel = 'Dialog',
   children,
   size = 'medium',
   surface = 'paper',
@@ -61,6 +63,7 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-labelledby={title ? titleId : undefined}
+        aria-label={title ? undefined : ariaLabel}
         tabIndex={-1}
       >
         <div className={styles.header}>

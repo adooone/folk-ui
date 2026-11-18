@@ -83,9 +83,6 @@ export function Tooltip({
   // the final position (including viewport clamping) can be computed from
   // real dimensions.
   const [size, setSize] = useState<TooltipSize | null>(null);
-  // A wrapper element holds the position ref rather than the child itself,
-  // since folk-ui's components are plain function components (no
-  // forwardRef), so a ref passed via cloneElement would silently fail.
   const wrapperRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLSpanElement | null>(null);
   const showTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);

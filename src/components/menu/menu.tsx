@@ -48,7 +48,7 @@ const GAP = 6;
 /** Below the trigger, unless that runs off the viewport's bottom and the space above fits. */
 function menuTop(rect: DOMRect, height: number | null): number {
   const below = rect.bottom + GAP;
-  if (height === null || typeof window === 'undefined') return below;
+  if (height === null) return below;
   const above = rect.top - GAP - height;
   return below + height > window.innerHeight && above >= 0 ? above : below;
 }
@@ -107,19 +107,21 @@ export function Menu({ trigger, items, align = 'start', surface = 'paper', class
   }, [isOpen]);
 
   // Measured once the portal renders, so a menu near the viewport's bottom can open upward.
+  const hasRect = rect !== null;
   useLayoutEffect(() => {
-    if (!isOpen || !rect) {
+    if (!isOpen || !hasRect) {
       setMenuHeight(null);
       return;
     }
     if (listRef.current) setMenuHeight(listRef.current.offsetHeight);
-  }, [isOpen, rect]);
+  }, [isOpen, hasRect]);
 
   // Move focus into the menu once it's positioned and rendered
+  const isMeasured = menuHeight !== null;
   useEffect(() => {
-    if (!isOpen || !rect) return;
+    if (!isOpen || !isMeasured) return;
     listRef.current?.querySelector<HTMLElement>('[role="menuitem"]:not(:disabled)')?.focus();
-  }, [isOpen, rect]);
+  }, [isOpen, isMeasured]);
 
   const handleListKeyDown = (e: ReactKeyboardEvent<HTMLDivElement>) => {
     const focusableItems = Array.from(

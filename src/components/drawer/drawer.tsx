@@ -13,6 +13,8 @@ export interface DrawerProps {
   children: ReactNode;
   side?: 'left' | 'right';
   width?: number | string;
+  ariaLabel?: string;
+  ariaLabelledBy?: string;
   className?: string;
 }
 
@@ -22,6 +24,8 @@ export function Drawer({
   children,
   side = 'left',
   width = 320,
+  ariaLabel = 'Drawer',
+  ariaLabelledBy,
   className,
 }: DrawerProps) {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -46,7 +50,8 @@ export function Drawer({
         style={{ width: typeof width === 'number' ? `${width}px` : width }}
         role="dialog"
         aria-modal="true"
-        aria-label="Drawer"
+        aria-label={ariaLabelledBy ? undefined : ariaLabel}
+        aria-labelledby={ariaLabelledBy}
         tabIndex={-1}
       >
         {children}
